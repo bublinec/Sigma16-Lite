@@ -700,4 +700,7 @@ window.onload = function () {
     initializeSubsystems ();
     
     console.log("Initialization complete");
+    // GO TO EDITOR AT THE BEGGINING
+    editor_pane_button()
+    console.log("GOING TO THE EDITO");
 }
