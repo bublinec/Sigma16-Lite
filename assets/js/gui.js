@@ -28,6 +28,10 @@
 // in the listing.  Some other geometric parameters are also obtained,
 // but aren't currently used.
 
+
+
+
+
 function getListingDims (es) {
     let e = document.getElementById('ProcAsmListing');
     let x = e.getBoundingClientRect(); // dimensions of visible listing area
@@ -590,38 +594,11 @@ function foobarSaveAs () {
 
 
 
-/*
-https://www.codeproject.com/Questions/896991/create-file-by-javascript
-So, we just need to call the script on window onload like.
-Hide   Expand    Copy Code
-window.onload = function(){
-            var textFile = null,
 
-            makeTextFile = function (text) {
-                                var data = new Blob([text], {type: 'text/plain'});
 
-                                // If we are replacing a previously generated file we need to
-                                // manually revoke the object URL to avoid memory leaks.
-                                if (textFile !== null) {
-                                  window.URL.revokeObjectURL(textFile);
-                                }
 
-                                textFile = window.URL.createObjectURL(data);
 
-                                return textFile;
-                            };
 
-            var create = document.getElementById('create'),
-            textbox = document.getElementById('textbox');
-
-            create.addEventListener('click', function () {
-                                                var link = document.getElementById('downloadlink');
-                                                link.href = makeTextFile(textbox.value);
-                                                link.style.display = 'block';
-                                            }, false);
-        };
-
-*/
 
 //-------------------------------------------------------------------------------
 // Complete initialization when onload occurs
@@ -631,9 +608,6 @@ window.onload = function () {
     
     console.log("window.onload activated");
 
-//    s16modules = [];    // All the modules in the system
-//    nModules = 1;
-//    selectedModule = 0;
     initModules();
 
     showTabbedPane("WelcomePane");
@@ -718,56 +692,12 @@ window.onload = function () {
     
     editorBufferTextArea = document.getElementById("EditorTextArea");
     
-/* for save download */
-//    create = document.getElementById('CreateFileForDownload'),
-//    textbox = document.getElementById('DownloadFileTextBox');
-//  create.addEven
-//    var link = document.getElementById('downloadlink');
-//    link.href = makeTextFile(textbox.value);
-//    link.style.display = 'block';
-    //  }, false);
-
-
     resetRegisters();
     initialize_mid_main_resizing ();
     setMidMainLRratio(0.65);  // useful for dev to keep mem display visible
     showSizeParameters();
     adjustToMidMainLRratio();
     initializeSubsystems ();
-
     
     console.log("Initialization complete");
 }
-
-
-/*
-https://stackoverflow.com/questions/31048215/how-to-create-txt-file-using-javascript-html5
-
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/plain'});
-
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-  };
-
-
-  var create = document.getElementById('create'),
-    textbox = document.getElementById('textbox');
-
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
-    link.href = makeTextFile(textbox.value);
-    link.style.display = 'block';
-  }, false);
-})();
-
-*/

@@ -86,7 +86,7 @@ pane height
     --IOlogHeight: calc(var(--ProcStateHeight) - 4.5em); /* sub inp & label ht */
     --ProcAsmTextHeight: calc(var(--paneBodyHeight)
 			      - (var(--ProcStateHeight)
-				 + 2.7em)); // allow for scrollbar and borders */
+				 + 2.7em)); /* allow for scrollbar and borders */
     --middle-section-separator-color: blue;
     --botSecHeight: 1.2em;
     --bottom-section-background-color: beige;
