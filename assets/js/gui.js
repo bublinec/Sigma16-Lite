@@ -484,6 +484,7 @@ function assembler_pane_button() {
 //    console.log("assembler_pane_button clicked")
     hideAllTabbedPanes();
     showTabbedPane("AssemblerPane");
+    assembler()
 }
 
 function linker_pane_button() {

@@ -18,20 +18,18 @@
 
 
   <body>
-    <div class="FullFrame">
+  <div class="FullFrame">
 
-	<!-- ???? -->
-      <div class="DialoguePopup" id="BreakDialogue">
+	<!-- ???? NO IDEA WHAT IS THIS-->
+	<div class="DialoguePopup" id="BreakDialogue">
 		<div class="PaneButtons">
-	  <button onclick="breakRefresh(emulatorState)">Refresh</button>
-	  <button onclick="breakEnable(emulatorState)">Enable</button>
-	  <button onclick="breakDisable(emulatorState)">Disable</button>
-	  <button onclick="breakClose()">Close</button>
-	</div>
-	<textarea class="Editor" spellcheck="false" id="BreakTextArea">
-	</textarea>
-      </div>
-
+			<button onclick="breakRefresh(emulatorState)">Refresh</button>
+			<button onclick="breakEnable(emulatorState)">Enable</button>
+			<button onclick="breakDisable(emulatorState)">Disable</button>
+			<button onclick="breakClose()">Close</button>
+		</div>
+		<textarea class="Editor" spellcheck="false" id="BreakTextArea"></textarea>
+    </div>
 	<!-- MAIN NAVBAR -->
       <!-- <div class="TopSection">
 		<button onclick="editor_pane_button()"> Editor </button>
@@ -42,188 +40,178 @@
 	  </div>
 	   -->
 	  
-      <div class="MiddleSection" id="MiddleSection">
+	<div class="MiddleSection" id="MiddleSection">
 	<div class="MidMainSection">
-	  <div class="MidMainLeft" id="MidMainLeft">
+		<!-- LEFT PANEL -->
+		<div class="MidMainLeft" id="MidMainLeft">
+			
+			<!-- EDITOR PANE -->
+			<div class="Pane" id="EditorPane">
+				<!-- EDITOR NAV -->
+			<div class="PaneButtons">
+				<button onclick="editorClear()">Clear</button>
+				<button onclick="newModule()">New</button>
+				<button onclick="insert_example(example_hello_world);">Hello, world!</button>
+				<button onclick="editorDownload()">Save in downloads
+					<a download="S16DownloadFile.txt" id="editorDownloadAnchor" style="display: none"></a>
+				</button>
+			</div>
+			<!-- EDITOR BODY -->
+			<div class="PaneBody" id="EditorBody">
+				<textarea class="Editor" spellcheck="false" id="EditorTextArea">
+				</textarea>
+			</div>
+			</div>
 
+			<!-- DO NOT REMOVE - unused panes-->
+			<div class="unused_panes">
+				<!-- MODULE PANE -->
+				<div class="Pane" id="ModulesPane">
+					<div class="PaneButtons">
+					<button onclick="newModule()">New</button>
+					<input type="file" multiple id="FileInput"
+							name="myfileselector"
+							onchange="handleSelectedFiles(this.files);"></input>
+					<button onclick="refreshModulesList()">Refresh list</button>
+					</div>
+					<div class="HighlightedTextAsHtml" id="FilesBody">
+					</div>
+				</div>
 
-		<!-- DO NOT REMOVE -->
-	    <div class="Pane" id="ModulesPane">
-	      <div class="PaneButtons">
-		<button onclick="newModule()">New</button>
-		<input type="file" multiple id="FileInput"
-		       name="myfileselector"
-		       onchange="handleSelectedFiles(this.files);"></input>
-		<button onclick="refreshModulesList()">Refresh list</button>
-	      </div>
-	      <div class="HighlightedTextAsHtml" id="FilesBody">
-	      </div>
-	    </div>
-	    
-	    <div class="Pane" id="EditorPane">
-	      <div class="PaneButtons">
-		<button onclick="editorClear()">Clear</button>
-		<button onclick="newModule()">New</button>
-		<button onclick="insert_example(example_hello_world);">
-		  Hello, world!
-		<button onclick="editorDownload()">Save in downloads</button>
-		<a download="S16DownloadFile.txt"
-		   id="editorDownloadAnchor"
-		   style="display: none">
-		</a>
-		</button>
-	      </div>
-	      <div class="PaneBody" id="EditorBody">
-		<textarea class="Editor" spellcheck="false" id="EditorTextArea">
-		</textarea>
-	      </div>
+				<!-- LINKER PANE -->
+				<div class="Pane" id="LinkerPane">
+					<div class="PaneButtons">
+						<button onclick="showLinkerStatus()">Status</button>
+						<button onclick="setLinkerModules()"> Set modules </button>
+						<button onclick="link()"> Link </button>
+						<button onclick="boot(emulatorState)"> Boot </button>
+					</div>
+					<div class="PaneBody" id="LinkerBody">
+					<div id="LinkerText"></div>
+					</div>
+				</div>
+				
+				<!-- TEST PANE-->
+				<div class="Pane" id="TestPane">
+				<div class="PaneButtons">
+					<button onclick="testpane1();"> testpane 1 </button>
+					<button onclick="testpane2();"> testpane 2 </button>
+					<button onclick="testpane3();"> testpane 3 </button>
+				</div>
+				<div class="PaneBody" id="TestPaneBody">
+				<div id="TestListing">
+				<pre class="CodePre"><code class="HighlightedTextAsHtmlExperiment">
+					some tupid text here
+				</code></pre>
+				<span class="solarized-green">Solarized green</span>
+				<span class="solarized-blue">Solarized blue</span>
+				<span class="solarized-red">Solarized red</span>
+				<span class="solarized-cyan">Solarized cyan</span>
+				<span class="solarized-violet">Solarized violet</span>
+				<span class="solarized-magenta">Solarized magenta</span>
+				<span class="solarized-orange">Solarized orange</span>
+				<span class="solarized-yellow">Solarized yellow</span>  
+
+				</div>
+				</div>
+			</div>
+			</div>
+
 		</div>
-		
-
-
-
-
-		<!-- DO NOT REMOVE -->
-	    <div class="Pane" id="LinkerPane">
-	      <div class="PaneButtons">
-                <button onclick="showLinkerStatus()">Status</button>
-		<button onclick="setLinkerModules()"> Set modules </button>
-		<button onclick="link()"> Link </button>
-		<button onclick="boot(emulatorState)"> Boot </button>
-	      </div>
-	      <div class="PaneBody" id="LinkerBody">
-		<div id="LinkerText"></div>
-	      </div>
-	    </div>
-	    
-
-
-		<!-- DO NOT REMOVE - couses trouble -->
-	    <div class="Pane" id="TestPane">
-	      <div class="PaneButtons">
-		<button onclick="testpane1();"> testpane 1 </button>
-		<button onclick="testpane2();"> testpane 2 </button>
-		<button onclick="testpane3();"> testpane 3 </button>
-	      </div>
-	      <div class="PaneBody" id="TestPaneBody">
-		<div id="TestListing">
-		  <pre class="CodePre"><code class="HighlightedTextAsHtmlExperiment">
-			  some tupid text here
-		  </code></pre>
-		  <span class="solarized-green">Solarized green</span>
-		  <span class="solarized-blue">Solarized blue</span>
-		  <span class="solarized-red">Solarized red</span>
-		  <span class="solarized-cyan">Solarized cyan</span>
-		  <span class="solarized-violet">Solarized violet</span>
-		  <span class="solarized-magenta">Solarized magenta</span>
-		  <span class="solarized-orange">Solarized orange</span>
-		  <span class="solarized-yellow">Solarized yellow</span>  
-
-		</div>
-	      </div>
-		</div>
-		
-
-	  </div>
 
 	<!-- RIGHT PANEL -->
-	  <div class="MidMainRight" id="MidMainRight">
-		<!-- NAVBAR -->
-		<div class="navbar">
-			<button onclick="assembler_pane_button()"> Assembler </button>
-			<button onclick="processor_pane_button()"> RUN </button>
-			<button onclick="welcome_pane_button()"> Guide </button>
-			<button onclick="examples_pane_button()"> Examples </button>
-			<!-- RESIZING MidRight -->
-			<button class="RightButton" onclick="user_guide_resize(20)">&#x27f9;</button>
-			<button class="RightButton" onclick="user_guide_resize(-20)">&#x27f8;</button>
-		</div>
+		<div class="MidMainRight" id="MidMainRight">
+			<!-- NAVBAR -->
+			<div class="navbar">
+				<button onclick="assembler_pane_button()"> Assembler </button>
+				<button onclick="processor_pane_button()"> RUN </button>
+				<button onclick="welcome_pane_button()"> Guide </button>
+				<button onclick="examples_pane_button()"> Examples </button>
+				<!-- RESIZING MidRight -->
+				<button class="RightButton" onclick="user_guide_resize(20)">&#x27f9;</button>
+				<button class="RightButton" onclick="user_guide_resize(-20)">&#x27f8;</button>
+			</div>
 
 
-		<!-- PANES -->
-		<!-- EXAMPLE PANE -->
-	    <div class="Pane" id="ExamplesPane">
-			<div class="PaneButtons">
-		  <button onclick="examplesHome()">Examples</button>
-		  <button onclick="selectExample()">Select example</button>
+			<!-- PANES -->
+			<!-- EXAMPLE PANE -->
+			<div class="Pane" id="ExamplesPane">
+				<div class="PaneButtons">
+					<button onclick="examplesHome()">Back</button>
+					<button onclick="selectExample()">Select</button>
+				</div>
+				<div class="PaneBody" id="ExamplesPane">
+					<iframe src="documentation/examples/index.html"
+						name="ExamplesIframe"
+						id="ExamplesIframeId">
+					</iframe>
+				</div>
 			</div>
-			<div class="PaneBody" id="ExamplesPane">
-		  <iframe src="documentation/examples/index.html"
-			  name="ExamplesIframe"
-			  id="ExamplesIframeId">
-		  </iframe>
+
+			<!-- WELCOME PANE -->
+			<div class="Pane" id="WelcomePane">
+				<div class="PaneButtons">
+			<button onclick="jumpToGuideTop()">
+				Contents
+			</button>
+			<button onclick="jumpToGuideSection('tutorials')">
+				Tutorials
+			</button>
+			<button onclick="jumpToGuideSection('architecture');">
+				Architecture
+			</button>
+			<button onclick="jumpToGuideSection('instruction-set');">
+				Instruction set
+			</button>
+			<button onclick="jumpToGuideSection('assembly-language');">
+				Assembly language
+			</button>
+			<button onclick="jumpToGuideSection('linker');">
+				Linker
+			</button>
+			<button onclick="jumpToGuideSection('programming');">
+				Programming
+			</button>
+			<button onclick="jumpToGuideSection('about-sigma16');">
+				About Sigma16
+			</button>
+
+				</div>
+				<div class="PaneBody" id="WelcomeHtml">
+			<div class="HtmlUnscrolled">
+				<iframe src="docs/intro.html"
+					name="WelcomeIframe"
+					id="WelcomeIframeId">
+				</iframe>
 			</div>
-		  </div>
-  
-		<!-- WELCOME PANE -->
-		  <div class="Pane" id="WelcomePane">
-			<div class="PaneButtons">
-		  <button onclick="jumpToGuideTop()">
-			Contents
-		  </button>
-		  <button onclick="jumpToGuideSection('tutorials')">
-			Tutorials
-		  </button>
-		  <button onclick="jumpToGuideSection('architecture');">
-			Architecture
-		  </button>
-		  <button onclick="jumpToGuideSection('instruction-set');">
-			Instruction set
-		  </button>
-		  <button onclick="jumpToGuideSection('assembly-language');">
-			Assembly language
-		  </button>
-		  <button onclick="jumpToGuideSection('linker');">
-			Linker
-		  </button>
-		  <button onclick="jumpToGuideSection('programming');">
-			Programming
-		  </button>
-		  <button onclick="jumpToGuideSection('about-sigma16');">
-			About Sigma16
-		  </button>
-  
+				</div>
 			</div>
-			<div class="PaneBody" id="WelcomeHtml">
-		  <div class="HtmlUnscrolled">
-			<iframe src="docs/intro.html"
-				name="WelcomeIframe"
-				id="WelcomeIframeId">
-			</iframe>
-		  </div>
-			</div>
-		  </div>
 
 
 
 		<!-- ASSEMBLER PANE -->
-		  <div class="Pane" id="AssemblerPane">
-			<div class="PaneButtons">
-		  <button onclick="assembler();">Assemble</button>
-		  <button onclick="setAsmListing();">Assembly listing</button>
-		  <button onclick="setObjectListing();">Object listing</button>
-			</div>
+		<div class="Pane" id="AssemblerPane">
 			<div class="HighlightedTextAsHtml" id="AssemblerBody">
-		  <div id="AsmTextHtml"></div>
+				<div id="AsmTextHtml"></div>
 			</div>
-		  </div>
+		</div>
 
 
 		<!-- PROCESSOR PANE -->
 		<div class="Pane" id="ProcessorPane">
 			<div class="PaneButtons">
-		  <button onclick="procReset(emulatorState)"> Reset </button>
-		  <button onclick="boot(emulatorState)"> Boot </button>
-		  <button onclick="procStep(emulatorState)"> Step </button>
-		  <button onclick="procRun(emulatorState)"> Run </button>
-		  <button onclick="procPause(emulatorState)">Pause</button>
-		  <button onclick="procInterrupt(emulatorState)">Interrupt</button>
-		  <button onclick="procBreakpoint(emulatorState)">Breakpoint</button>
+		<button onclick="procReset(emulatorState)"> Reset </button>
+		<button onclick="boot(emulatorState)"> Boot </button>
+		<button onclick="procStep(emulatorState)"> Step </button>
+		<button onclick="procRun(emulatorState)"> Run </button>
+		<button onclick="procPause(emulatorState)">Pause</button>
+		<button onclick="procInterrupt(emulatorState)">Interrupt</button>
+		<button onclick="procBreakpoint(emulatorState)">Breakpoint</button>
 			</div>
 			<div class="PaneBody" id="ProcessorBody">
-		  <div id="ProcessorState">
+		<div id="ProcessorState">
 			<div class="ProcStateSection" id="InstructionRegisters">
-			  <div class="Registers">
+			<div class="Registers">
 				<div class="NewRegSecName">Control</div>
 				<div class="RegisterName">pc</div>
 				<div class="RegisterValue" id='pcElt'></div>
@@ -235,10 +223,10 @@
 				<div class="RegisterValue" id='datElt'></div>
 				<div class="RegisterName">status</div>
 				<div class="RegisterValue" id="statusElt"></div>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="InterruptRegisters">
-			  <div class="Registers">
+			<div class="Registers">
 				<div class="NewRegSecName">Interrupt</div>
 				<div class="RegisterName">mask</div>
 				<div class="RegisterValue" id="maskElt"></div>
@@ -250,10 +238,10 @@
 				<div class="RegisterValue" id='ipcElt'></div>
 				<div class="RegisterName">vect</div>
 				<div class="RegisterValue" id="vectElt"></div>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="SegmentRegisters">
-			  <div class="Registers">
+			<div class="Registers">
 				<div class="NewRegSecName">Segment</div>
 				<div class="RegisterName">seg</div>
 				<div class="RegisterValue" id="sEnableElt"></div>
@@ -265,10 +253,10 @@
 				<div class="RegisterValue" id="bdsegElt">0000</div>
 				<div class="RegisterName">edseg</div>
 				<div class="RegisterValue" id="edsegElt">ffff</div>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="RegisterFile">
-			  <div class="Registers">
+			<div class="Registers">
 				<div class="NewRegSecName">Reg File</div>
 				<div class="RegisterName">R0</div>
 				<div class="RegisterValue" id="R0">0123</div>
@@ -302,10 +290,10 @@
 				<div class="RegisterValue" id="R14">0123</div>
 				<div class="RegisterName">R15</div>
 				<div class="RegisterValue" id="R15">0123</div>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="InstructionDecode">
-			  <div class="Decode">
+			<div class="Decode">
 				<div class="DecodeSecName">Decode Instruction</div>
 				<div class="DecodeName">Code</div>
 				<div class="DecodeValue" id="InstrCode"></div>
@@ -323,10 +311,10 @@
 				<div class="DecodeValue" id="InstrEffect1"></div>
 				<div class="DecodeName">Act</div>
 				<div class="DecodeValue" id="InstrEffect2"></div>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="Emulator">
-			  <div class="Registers">
+			<div class="Registers">
 				<div class="NewRegSecName">Emulator</div>
 				<div class="RegisterName">s</div>
 				<div class="RegisterValue" id="procStatus"></div>
@@ -335,40 +323,38 @@
 				<div class="RegisterName">m</div>
 				<div class="RegisterValue">break</div>
 				<input class="EmCtlLine" id="TimerButton"
-				   type="button"
-				   value="Timer interrupt"
-				   onclick="timerInterrupt()">
+				type="button"
+				value="Timer interrupt"
+				onclick="timerInterrupt()">
 				</input>
 				<input class="EmCtlLine" id="FullDisplayToggleButton"
 					type="button"
 					onclick="toggleFullDisplay()">
 				</input>
-			  </div>
+			</div>
 			</div>
 			<div class="ProcStateSection" id="MemSection">
-			  <div class="MemSecName">Memory</div>
-			  <div class="MemDisplay" id="MemDisplay1"></div>
-			  <div class="MemDisplay" id="MemDisplay2"></div>
+			<div class="MemSecName">Memory</div>
+			<div class="MemDisplay" id="MemDisplay1"></div>
+			<div class="MemDisplay" id="MemDisplay2"></div>
 			</div>
 			<div class="ProcStateSection" id="IOSection">
-			  <div class="IOSecName">Input/Output</div>
-			  <div class="IOlog" id="IOlog">
-			  </div>
-					  <textarea spellcheck="false" id="IOinputBuffer"></textarea>
-			  <div id="IOInbufLabel">Input Buffer</div>
+			<div class="IOSecName">Input/Output</div>
+			<div class="IOlog" id="IOlog">
 			</div>
-		  </div>
-		  <div id="ProcAsmListing"></div>
+					<textarea spellcheck="false" id="IOinputBuffer"></textarea>
+			<div id="IOInbufLabel">Input Buffer</div>
 			</div>
-		  </div>
-
+		</div>
+		<div id="ProcAsmListing"></div>
+			</div>
+		</div>
 		
-	  </div> 
+		</div> 
 
-
- 	</div>
-      </div>
-	</div>
+	</div> <!-- MiddleMainSection -->
+	</div> <!-- MiddleSection -->
+ </div> <!-- FULL FRAME -->
 
 	<!-- My JS -->
 	<script src="assets/js/lite.js"></script>
