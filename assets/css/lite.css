@@ -38,3 +38,19 @@
 #EditorBody{
     height: 100%;
 }
+
+.unused{
+    display: none;
+}
+
+.Pane{
+    background-color: #222222;
+}
+
+#ProcessorPane{
+    /* max-width: 400px; */
+}
+
+#ProcessorState{
+    display: block;
+}

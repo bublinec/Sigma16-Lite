@@ -612,7 +612,7 @@ window.onload = function () {
     initModules();
 
     showTabbedPane("EditorPane");
-    showTabbedPane("AssemblerPane")
+    showTabbedPane("ProcessorPane")
     initializeProcessorElements ();  // so far, it's just instr decode
     clearInstrDecode (emulatorState);
     
