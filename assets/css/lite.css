@@ -1,4 +1,12 @@
 #ProcessorPane{
-    float: left;
-    /* width: 300px; */
+    /* float; */
+    width: 300px;
+}
+
+#ExamplesPane{
+    width: 300px;
+}
+
+.navbar{
+    height: 30px;
 }

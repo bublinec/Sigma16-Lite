@@ -442,10 +442,10 @@ function hideAllTabbedPanes() {
     hideTabbedPane("WelcomePane");
     hideTabbedPane("ExamplesPane");
     hideTabbedPane("ModulesPane");
-    leaveEditor(); // will also hide editor pane
+    // leaveEditor(); // will also hide editor pane
     hideTabbedPane("AssemblerPane");
     hideTabbedPane("LinkerPane");
-    // hideTabbedPane("ProcessorPane");
+    hideTabbedPane("ProcessorPane");
     hideTabbedPane("TestPane");  
 }
 

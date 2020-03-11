@@ -60,60 +60,6 @@
 	<div class="MidMainSection">
 	  <div class="MidMainLeft" id="MidMainLeft">
 
-	    <div class="Pane" id="WelcomePane">
-	      <div class="PaneButtons">
-		<button onclick="jumpToGuideTop()">
-		  Contents
-		</button>
-		<button onclick="jumpToGuideSection('tutorials')">
-		  Tutorials
-		</button>
-		<button onclick="jumpToGuideSection('architecture');">
-		  Architecture
-		</button>
-		<button onclick="jumpToGuideSection('instruction-set');">
-		  Instruction set
-		</button>
-		<button onclick="jumpToGuideSection('assembly-language');">
-		  Assembly language
-		</button>
-		<button onclick="jumpToGuideSection('linker');">
-		  Linker
-		</button>
-		<button onclick="jumpToGuideSection('programming');">
-		  Programming
-		</button>
-		<button onclick="jumpToGuideSection('about-sigma16');">
-		  About Sigma16
-		</button>
-
-	      </div>
-	      <div class="PaneBody" id="WelcomeHtml">
-		<div class="HtmlUnscrolled">
-		  <iframe src="docs/intro.html"
-			  name="WelcomeIframe"
-			  id="WelcomeIframeId">
-		  </iframe>
-		</div>
-	      </div>
-	    </div>
-
-	    <div class="Pane" id="ExamplesPane">
-	      <div class="PaneButtons">
-		<button onclick="examplesHome()">
-		  Examples
-		</button>
-		<button onclick="selectExample()">
-		  Select example
-		</button>
-	      </div>
-	      <div class="PaneBody" id="ExamplesPane">
-		<iframe src="documentation/examples/index.html"
-			name="ExamplesIframe"
-			id="ExamplesIframeId">
-		</iframe>
-	      </div>
-	    </div>
 
 		<!-- DO NOT REMOVE -->
 	    <div class="Pane" id="ModulesPane">
@@ -145,18 +91,11 @@
 		<textarea class="Editor" spellcheck="false" id="EditorTextArea">
 		</textarea>
 	      </div>
-	    </div>
+		</div>
+		
 
-	    <div class="Pane" id="AssemblerPane">
-	      <div class="PaneButtons">
-		<button onclick="assembler();">Assemble</button>
-		<button onclick="setAsmListing();">Assembly listing</button>
-		<button onclick="setObjectListing();">Object listing</button>
-	      </div>
-	      <div class="HighlightedTextAsHtml" id="AssemblerBody">
-		<div id="AsmTextHtml"></div>
-	      </div>
-	    </div>
+
+
 
 		<!-- DO NOT REMOVE -->
 	    <div class="Pane" id="LinkerPane">
@@ -203,6 +142,88 @@
 
 	<!-- RIGHT PANEL -->
 	  <div class="MidMainRight" id="MidMainRight">
+		<!-- NAVBAR -->
+		<div class="navbar">
+			<button onclick="editor_pane_button()"> Editor </button>
+			<button onclick="assembler_pane_button()"> Assembler </button>
+			<button onclick="processor_pane_button()"> RUN </button>
+			<button onclick="welcome_pane_button()"> Guide </button>
+			<button onclick="examples_pane_button()"> Examples </button>
+			<!-- RESIZING MidRight -->
+			<button class="RightButton" onclick="user_guide_resize(20)">&#x27f9;</button>
+			<button class="RightButton" onclick="user_guide_resize(-20)">&#x27f8;</button>
+		</div>
+
+
+		<!-- PANES -->
+		<!-- EXAMPLE PANE -->
+	    <div class="Pane" id="ExamplesPane">
+			<div class="PaneButtons">
+		  <button onclick="examplesHome()">Examples</button>
+		  <button onclick="selectExample()">Select example</button>
+			</div>
+			<div class="PaneBody" id="ExamplesPane">
+		  <iframe src="documentation/examples/index.html"
+			  name="ExamplesIframe"
+			  id="ExamplesIframeId">
+		  </iframe>
+			</div>
+		  </div>
+  
+		<!-- WELCOME PANE -->
+		  <div class="Pane" id="WelcomePane">
+			<div class="PaneButtons">
+		  <button onclick="jumpToGuideTop()">
+			Contents
+		  </button>
+		  <button onclick="jumpToGuideSection('tutorials')">
+			Tutorials
+		  </button>
+		  <button onclick="jumpToGuideSection('architecture');">
+			Architecture
+		  </button>
+		  <button onclick="jumpToGuideSection('instruction-set');">
+			Instruction set
+		  </button>
+		  <button onclick="jumpToGuideSection('assembly-language');">
+			Assembly language
+		  </button>
+		  <button onclick="jumpToGuideSection('linker');">
+			Linker
+		  </button>
+		  <button onclick="jumpToGuideSection('programming');">
+			Programming
+		  </button>
+		  <button onclick="jumpToGuideSection('about-sigma16');">
+			About Sigma16
+		  </button>
+  
+			</div>
+			<div class="PaneBody" id="WelcomeHtml">
+		  <div class="HtmlUnscrolled">
+			<iframe src="docs/intro.html"
+				name="WelcomeIframe"
+				id="WelcomeIframeId">
+			</iframe>
+		  </div>
+			</div>
+		  </div>
+
+
+		  
+		<!-- ASSEMBLER PANE -->
+		  <div class="Pane" id="AssemblerPane">
+			<div class="PaneButtons">
+		  <button onclick="assembler();">Assemble</button>
+		  <button onclick="setAsmListing();">Assembly listing</button>
+		  <button onclick="setObjectListing();">Object listing</button>
+			</div>
+			<div class="HighlightedTextAsHtml" id="AssemblerBody">
+		  <div id="AsmTextHtml"></div>
+			</div>
+		  </div>
+
+
 		<!-- PROCESSOR PANE -->
 		<div class="Pane" id="ProcessorPane">
 			<div class="PaneButtons">
@@ -364,7 +385,7 @@
       </div>
 	</div>
 
-	<!-- MU JS -->
+	<!-- My JS -->
 	<script src="assets/js/lite.js"></script>
   </body>
 </html>
