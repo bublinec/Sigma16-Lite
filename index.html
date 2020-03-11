@@ -253,97 +253,101 @@
 								<div class="RegisterValue" id="edsegElt">ffff</div>
 							</div>
 							</div>
-						</div>
-
-						<div class="ProcStateSection" id="RegisterFile">
+							<div class="ProcStateSection" id="InstructionDecode">
+								<div class="Decode">
+									<div class="DecodeSecName">Decode Instruction</div>
+									<div class="DecodeName">Code</div>
+									<div class="DecodeValue" id="InstrCode"></div>
+									<div class="DecodeName">Fmt</div>
+									<div class="DecodeValue" id="InstrFmt"></div>
+									<div class="DecodeName">Op</div>
+									<div class="DecodeValue" id="InstrOp"></div>
+									<div class="DecodeName">Args</div>
+									<div class="DecodeValue" id="InstrArgs"></div>
+									<div class="DecodeName">EA</div>
+									<div class="DecodeValue" id="InstrEA"></div>
+									<div class="DecodeName">CC</div>
+									<div class="DecodeValue" id="InstrCC"></div>
+									<div class="DecodeName">Act</div>
+									<div class="DecodeValue" id="InstrEffect1"></div>
+									<div class="DecodeName">Act</div>
+									<div class="DecodeValue" id="InstrEffect2"></div>
+								</div>
+							</div>
+							<div class="ProcStateSection" id="Emulator">
 							<div class="Registers">
-								<div class="NewRegSecName">Reg File</div>
-								<div class="RegisterName">R0</div>
-								<div class="RegisterValue" id="R0">0123</div>
-								<div class="RegisterName">R1</div>
-								<div class="RegisterValue" id="R1">0123</div>
-								<div class="RegisterName">R2</div>
-								<div class="RegisterValue" id="R2">0123</div>
-								<div class="RegisterName">R3</div>
-								<div class="RegisterValue" id="R3">0123</div>
-								<div class="RegisterName">R4</div>
-								<div class="RegisterValue" id="R4">0123</div>
-								<div class="RegisterName">R5</div>
-								<div class="RegisterValue" id="R5">0123</div>
-								<div class="RegisterName">R6</div>
-								<div class="RegisterValue" id="R6">0123</div>
-								<div class="RegisterName">R7</div>
-								<div class="RegisterValue" id="R7">0123</div>
-								<div class="RegisterName">R8</div>
-								<div class="RegisterValue" id="R8">0123</div>
-								<div class="RegisterName">R9</div>
-								<div class="RegisterValue" id="R9">0123</div>
-								<div class="RegisterName">R10</div>
-								<div class="RegisterValue" id="R10">0123</div>
-								<div class="RegisterName">R11</div>
-								<div class="RegisterValue" id="R11">0123</div>
-								<div class="RegisterName">R12</div>
-								<div class="RegisterValue" id="R12">0123</div>
-								<div class="RegisterName">R13</div>
-								<div class="RegisterValue" id="R13">0123</div>
-								<div class="RegisterName">R14</div>
-								<div class="RegisterValue" id="R14">0123</div>
-								<div class="RegisterName">R15</div>
-								<div class="RegisterValue" id="R15">0123</div>
-							</div>
-						</div>
-						<div class="ProcStateSection" id="InstructionDecode">
-							<div class="Decode">
-								<div class="DecodeSecName">Decode Instruction</div>
-								<div class="DecodeName">Code</div>
-								<div class="DecodeValue" id="InstrCode"></div>
-								<div class="DecodeName">Fmt</div>
-								<div class="DecodeValue" id="InstrFmt"></div>
-								<div class="DecodeName">Op</div>
-								<div class="DecodeValue" id="InstrOp"></div>
-								<div class="DecodeName">Args</div>
-								<div class="DecodeValue" id="InstrArgs"></div>
-								<div class="DecodeName">EA</div>
-								<div class="DecodeValue" id="InstrEA"></div>
-								<div class="DecodeName">CC</div>
-								<div class="DecodeValue" id="InstrCC"></div>
-								<div class="DecodeName">Act</div>
-								<div class="DecodeValue" id="InstrEffect1"></div>
-								<div class="DecodeName">Act</div>
-								<div class="DecodeValue" id="InstrEffect2"></div>
-							</div>
-						</div>
-						<div class="ProcStateSection" id="Emulator">
-						<div class="Registers">
-							<div class="NewRegSecName">Emulator</div>
-							<div class="RegisterName">s</div>
-							<div class="RegisterValue" id="procStatus"></div>
-							<div class="RegisterName">n</div>
-							<div class="RegisterValue" id="nInstrExecuted"></div>
-							<div class="RegisterName">m</div>
-							<div class="RegisterValue">break</div>
-							<input class="EmCtlLine" id="TimerButton"
-							type="button"
-							value="Timer interrupt"
-							onclick="timerInterrupt()">
-							</input>
-							<input class="EmCtlLine" id="FullDisplayToggleButton"
+								<div class="NewRegSecName">Emulator</div>
+								<div class="RegisterName">s</div>
+								<div class="RegisterValue" id="procStatus"></div>
+								<div class="RegisterName">n</div>
+								<div class="RegisterValue" id="nInstrExecuted"></div>
+								<div class="RegisterName">m</div>
+								<div class="RegisterValue">break</div>
+								<input class="EmCtlLine" id="TimerButton"
 								type="button"
-								onclick="toggleFullDisplay()">
-							</input>
+								value="Timer interrupt"
+								onclick="timerInterrupt()">
+								</input>
+								<input class="EmCtlLine" id="FullDisplayToggleButton"
+									type="button"
+									onclick="toggleFullDisplay()">
+								</input>
+							</div>
+							</div>
+		
 						</div>
+						<div class="CPU_box">
+							<div class="ProcStateSection" id="RegisterFile">
+								<div class="Registers">
+									<div class="NewRegSecName">Reg File</div>
+									<div class="RegisterName">R0</div>
+									<div class="RegisterValue" id="R0">0123</div>
+									<div class="RegisterName">R1</div>
+									<div class="RegisterValue" id="R1">0123</div>
+									<div class="RegisterName">R2</div>
+									<div class="RegisterValue" id="R2">0123</div>
+									<div class="RegisterName">R3</div>
+									<div class="RegisterValue" id="R3">0123</div>
+									<div class="RegisterName">R4</div>
+									<div class="RegisterValue" id="R4">0123</div>
+									<div class="RegisterName">R5</div>
+									<div class="RegisterValue" id="R5">0123</div>
+									<div class="RegisterName">R6</div>
+									<div class="RegisterValue" id="R6">0123</div>
+									<div class="RegisterName">R7</div>
+									<div class="RegisterValue" id="R7">0123</div>
+									<div class="RegisterName">R8</div>
+									<div class="RegisterValue" id="R8">0123</div>
+									<div class="RegisterName">R9</div>
+									<div class="RegisterValue" id="R9">0123</div>
+									<div class="RegisterName">R10</div>
+									<div class="RegisterValue" id="R10">0123</div>
+									<div class="RegisterName">R11</div>
+									<div class="RegisterValue" id="R11">0123</div>
+									<div class="RegisterName">R12</div>
+									<div class="RegisterValue" id="R12">0123</div>
+									<div class="RegisterName">R13</div>
+									<div class="RegisterValue" id="R13">0123</div>
+									<div class="RegisterName">R14</div>
+									<div class="RegisterValue" id="R14">0123</div>
+									<div class="RegisterName">R15</div>
+									<div class="RegisterValue" id="R15">0123</div>
+								</div>
+							</div>
+							<div class="ProcStateSection" id="MemSection">
+								<div class="MemSecName">Memory</div>
+								<div class="MemDisplay" id="MemDisplay1"></div>
+								<div class="MemDisplay" id="MemDisplay2"></div>
+							</div>
+							<div class="ProcStateSection" id="IOSection">
+								<div id="IOInbufLabel">Input</div>
+								<textarea spellcheck="false" id="IOinputBuffer"></textarea>
+								<div class="IOSecName">Output</div>
+								<div class="IOlog" id="IOlog"></div>
+								<div class="RegisterValue" id="nInstrExecuted"></div>
+							</div>
 						</div>
-						<div class="ProcStateSection" id="MemSection">
-							<div class="MemSecName">Memory</div>
-							<div class="MemDisplay" id="MemDisplay1"></div>
-							<div class="MemDisplay" id="MemDisplay2"></div>
-						</div>
-						<div class="ProcStateSection" id="IOSection">
-							<div class="IOSecName">Input/Output</div>
-							<div class="IOlog" id="IOlog"></div>
-							<textarea spellcheck="false" id="IOinputBuffer"></textarea>
-							<div id="IOInbufLabel">Input Buffer</div>
-						</div>
+					
 					</div>
 					<div id="ProcAsmListing"></div>
 				</div>

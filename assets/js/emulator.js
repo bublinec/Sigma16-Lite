@@ -133,6 +133,21 @@ function showEffect (es,i) {
 // (without linking) or the load module (if the linker has been run).
 
 function boot(es) {
+
+    // // SET WIDTH:
+    // console.log("Here you go:")
+    // console.log(midMainRight);
+    // var width = document.querySelector(".MidMainRight .Pane").style.width;
+    // console.log(width);
+    // console.log(document.querySelector("#ProcAsmListing"))
+    // console.log(document.querySelector(".MidMainRight .Pane"));
+    
+    // ASSEMBLE
+    assembler()
+
+    // ------------------------
+
+
     console.log ('boot');
     let m = getCurrentModule ();
     exMod = m;
@@ -158,6 +173,9 @@ function boot(es) {
     } else {
 	console.log ('cannot boot')
     }
+
+
+
 }
 
 // Copy a module's object code into memory.  Should use objectCode
