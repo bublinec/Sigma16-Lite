@@ -42,7 +42,7 @@
 	  
 	<div class="MiddleSection" id="MiddleSection">
 	<div class="MidMainSection">
-		<!-- LEFT PANEL -->
+		<!-- LEFT PANEL - editor-->
 		<div class="MidMainLeft" id="MidMainLeft">
 			
 			<!-- EDITOR PANE -->
@@ -119,7 +119,7 @@
 
 		</div>
 
-	<!-- RIGHT PANEL -->
+		<!-- RIGHT PANEL - processor, documentation-->
 		<div class="MidMainRight" id="MidMainRight">
 			<!-- NAVBAR -->
 			<div class="navbar">
@@ -200,17 +200,17 @@
 		<!-- PROCESSOR PANE -->
 		<div class="Pane" id="ProcessorPane">
 			<div class="PaneButtons">
-		<button onclick="procReset(emulatorState)"> Reset </button>
-		<button onclick="boot(emulatorState)"> Boot </button>
-		<button onclick="procStep(emulatorState)"> Step </button>
-		<button onclick="procRun(emulatorState)"> Run </button>
-		<button onclick="procPause(emulatorState)">Pause</button>
-		<button onclick="procInterrupt(emulatorState)">Interrupt</button>
-		<button onclick="procBreakpoint(emulatorState)">Breakpoint</button>
+				<button onclick="boot(emulatorState)"> Boot </button>
+				<button onclick="procReset(emulatorState)"> Reset </button>
+				<button onclick="procStep(emulatorState)"> Step </button>
+				<button onclick="procRun(emulatorState)"> Run </button>
+				<button onclick="procPause(emulatorState)">Pause</button>
+				<!-- <button onclick="procInterrupt(emulatorState)">Interrupt</button> -->
+				<!-- <button onclick="procBreakpoint(emulatorState)">Breakpoint</button> -->
 			</div>
 			<div class="PaneBody" id="ProcessorBody">
 		<div id="ProcessorState">
-			<div class="ProcStateSection" id="InstructionRegisters">
+			<!-- <div class="ProcStateSection" id="InstructionRegisters">
 			<div class="Registers">
 				<div class="NewRegSecName">Control</div>
 				<div class="RegisterName">pc</div>
@@ -253,7 +253,7 @@
 				<div class="RegisterValue" id="bdsegElt">0000</div>
 				<div class="RegisterName">edseg</div>
 				<div class="RegisterValue" id="edsegElt">ffff</div>
-			</div>
+			</div> -->
 			</div>
 			<div class="ProcStateSection" id="RegisterFile">
 			<div class="Registers">

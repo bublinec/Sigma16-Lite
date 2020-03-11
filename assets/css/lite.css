@@ -1,29 +1,3 @@
-.navbar{
-    height: 25px;
-}
-
-.TopSection{
-    height: 0;
-}
-
-.MidMainRight .Pane{
-    width: 100%;
-    height: 94%;
-}
-
-.MiddleSection{
-    height: 99%;
-}
-
-#EditorBody{
-    height: 100%;
-}
-
-.PaneButtons{
-    height: 1.5em;
-    background-color: #222222;
-}
-
 :root{
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
@@ -35,6 +9,32 @@
     --paneSecPadding: 0;
 }
 
+.MiddleSection{
+    height: 99%;
+}
+
+.TopSection{
+    height: 0;
+}
+
+.navbar{
+    height: 25px;
+}
+
+.MidMainRight .Pane{
+    width: 100%;
+    height: 94%;
+}
+
 .PaneBody{
     background-color: #222222;
+}
+
+.PaneButtons{
+    height: 1.5em;
+    background-color: #222222;
+}
+
+#EditorBody{
+    height: 100%;
 }
