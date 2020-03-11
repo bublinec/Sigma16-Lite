@@ -2,7 +2,7 @@
     height: 25px;
 }
 
-.TopSection{
+.TopSection{.MidMainSection.MidMainSection
     height: 0;
 }
 
@@ -12,11 +12,16 @@
 }
 
 .MiddleSection{
-    height: 90%;
+    height: 95%;
 }
 
 #EditorBody{
     height: 100%;
+}
+
+.PaneButtons{
+    height: 1.5em;
+    background-color: #222222;
 }
 
 :root{
@@ -24,4 +29,12 @@
     --frameHBorderThickness: 0;
     --frameVBorderThickness: 0;
     --full-frame-background-color: #222222;
+    /* --topSectionHeight: 0;  */
+    --mid-main-right-background-color: #222222;
+    --paneButtonsHeight: 0;
+    --paneSecPadding: 0;
+}
+
+.PaneBody{
+    background-color: #222222;
 }
