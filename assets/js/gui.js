@@ -610,7 +610,8 @@ window.onload = function () {
 
     initModules();
 
-    showTabbedPane("WelcomePane");
+    showTabbedPane("EditorPane");
+    showTabbedPane("AssemblerPane")
     initializeProcessorElements ();  // so far, it's just instr decode
     clearInstrDecode (emulatorState);
     
@@ -700,7 +701,4 @@ window.onload = function () {
     initializeSubsystems ();
     
     console.log("Initialization complete");
-    // GO TO EDITOR AT THE BEGGINING
-    editor_pane_button()
-    console.log("GOING TO THE EDITO");
 }
