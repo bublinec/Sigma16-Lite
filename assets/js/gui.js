@@ -279,7 +279,7 @@ var middleSection;  // the middle section of the window; set in onload
 var midMainLeft;     // mid-main-left; set in onload
 var midMainRight;     // mid-main-right; set in onload, not used anywhere
 var midLRratio = 0.6;  // width of midMainLeft / midMainRight; set in onLoad
-var midSecExtraWidth = 15;  // width of borders in px
+var midSecExtraWidth = 0;  // width of borders in px
 
 // Initialize the variables (middleSection, midMainLeft, midMainRight)
 // in the onload event, because the DOI elements must exist before the
@@ -445,12 +445,12 @@ function hideAllTabbedPanes() {
     leaveEditor(); // will also hide editor pane
     hideTabbedPane("AssemblerPane");
     hideTabbedPane("LinkerPane");
-    hideTabbedPane("ProcessorPane");
-    hideTabbedPane("TestPane");
+    // hideTabbedPane("ProcessorPane");
+    hideTabbedPane("TestPane");  
 }
 
 function showTabbedPane(paneId) {
-//    console.log("showing tabbed pane " + paneId);
+   console.log("showing tabbed pane " + paneId);
     hideAllTabbedPanes();
     document.getElementById(paneId).style.display = "block";
     console.log("Now on tabbed pane " + paneId);
@@ -493,7 +493,7 @@ function linker_pane_button() {
 }
 
 function processor_pane_button() {
-//    console.log("processor_pane button clicked")
+   console.log("processor_pane button clicked")
     hideAllTabbedPanes();
     showTabbedPane("ProcessorPane");
 }

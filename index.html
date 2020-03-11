@@ -12,7 +12,8 @@
     <script src="assets/js/linker.js"> </script>
     <script src="assets/js/emulator.js"> </script>
 	<script src="assets/js/gui.js"> </script>
-    <link rel="stylesheet" href="assets/css/gui.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/gui.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/lite.css"> 
   </head>
 
 
@@ -31,13 +32,15 @@
 	</textarea>
       </div>
 
+	  <!-- NAVBAR -->
       <div class="TopSection">
 	<button onclick="editor_pane_button()"> Editor </button>
 	<button onclick="assembler_pane_button()"> Assembler </button>
-	<button onclick="processor_pane_button()"> Processor </button>
+	<button onclick="processor_pane_button()"> RUN </button>
 	<button onclick="welcome_pane_button()"> Guide </button>
 	<button onclick="examples_pane_button()"> Examples </button>
 
+	<!-- RESIZING MidRight -->
 	<button class="RightButton" onclick="user_guide_resize(20)">
 	  &#x27f9;
 	</button>
@@ -50,11 +53,8 @@
 	<button class="RightButton" onclick="user_guide_resize(-20)">
 	  &#x27f8;
 	</button>
-<!--
-	<button class="RightButton" onclick="test_pane_button()">
-	  Test
-	</button>
--->
+
+
       </div>
       <div class="MiddleSection" id="MiddleSection">
 	<div class="MidMainSection">
@@ -115,6 +115,7 @@
 	      </div>
 	    </div>
 
+		<!-- DO NOT REMOVE -->
 	    <div class="Pane" id="ModulesPane">
 	      <div class="PaneButtons">
 		<button onclick="newModule()">New</button>
@@ -157,6 +158,7 @@
 	      </div>
 	    </div>
 
+		<!-- DO NOT REMOVE -->
 	    <div class="Pane" id="LinkerPane">
 	      <div class="PaneButtons">
                 <button onclick="showLinkerStatus()">Status</button>
@@ -169,161 +171,9 @@
 	      </div>
 	    </div>
 	    
-	    <div class="Pane" id="ProcessorPane">
-	      <div class="PaneButtons">
-		<button onclick="procReset(emulatorState)"> Reset </button>
-		<button onclick="boot(emulatorState)"> Boot </button>
-		<button onclick="procStep(emulatorState)"> Step </button>
-		<button onclick="procRun(emulatorState)"> Run </button>
-		<button onclick="procPause(emulatorState)">Pause</button>
-		<button onclick="procInterrupt(emulatorState)">Interrupt</button>
-		<button onclick="procBreakpoint(emulatorState)">Breakpoint</button>
-	      </div>
-	      <div class="PaneBody" id="ProcessorBody">
-		<div id="ProcessorState">
-		  <div class="ProcStateSection" id="InstructionRegisters">
-		    <div class="Registers">
-		      <div class="NewRegSecName">Control</div>
-		      <div class="RegisterName">pc</div>
-		      <div class="RegisterValue" id='pcElt'></div>
-		      <div class="RegisterName">ir</div>
-		      <div class="RegisterValue" id='irElt'></div>
-		      <div class="RegisterName">adr</div>
-		      <div class="RegisterValue" id='adrElt'></div>
-		      <div class="RegisterName">dat</div>
-		      <div class="RegisterValue" id='datElt'></div>
-		      <div class="RegisterName">status</div>
-		      <div class="RegisterValue" id="statusElt"></div>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="InterruptRegisters">
-		    <div class="Registers">
-		      <div class="NewRegSecName">Interrupt</div>
-		      <div class="RegisterName">mask</div>
-		      <div class="RegisterValue" id="maskElt"></div>
-		      <div class="RegisterName">req</div>
-		      <div class="RegisterValue" id="reqElt"></div>
-		      <div class="RegisterName">istat</div>
-		      <div class="RegisterValue" id='istatElt'></div>
-		      <div class="RegisterName">ipc</div>
-		      <div class="RegisterValue" id='ipcElt'></div>
-		      <div class="RegisterName">vect</div>
-		      <div class="RegisterValue" id="vectElt"></div>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="SegmentRegisters">
-		    <div class="Registers">
-		      <div class="NewRegSecName">Segment</div>
-		      <div class="RegisterName">seg</div>
-		      <div class="RegisterValue" id="sEnableElt"></div>
-		      <div class="RegisterName">bpseg</div>
-		      <div class="RegisterValue" id="bpsegElt">0000</div>
-		      <div class="RegisterName">epseg</div>
-		      <div class="RegisterValue" id="epsegElt">ffff</div>
-		      <div class="RegisterName">bdseg</div>
-		      <div class="RegisterValue" id="bdsegElt">0000</div>
-		      <div class="RegisterName">edseg</div>
-		      <div class="RegisterValue" id="edsegElt">ffff</div>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="RegisterFile">
-		    <div class="Registers">
-		      <div class="NewRegSecName">Reg File</div>
-		      <div class="RegisterName">R0</div>
-		      <div class="RegisterValue" id="R0">0123</div>
-		      <div class="RegisterName">R1</div>
-		      <div class="RegisterValue" id="R1">0123</div>
-		      <div class="RegisterName">R2</div>
-		      <div class="RegisterValue" id="R2">0123</div>
-		      <div class="RegisterName">R3</div>
-		      <div class="RegisterValue" id="R3">0123</div>
-		      <div class="RegisterName">R4</div>
-		      <div class="RegisterValue" id="R4">0123</div>
-		      <div class="RegisterName">R5</div>
-		      <div class="RegisterValue" id="R5">0123</div>
-		      <div class="RegisterName">R6</div>
-		      <div class="RegisterValue" id="R6">0123</div>
-		      <div class="RegisterName">R7</div>
-		      <div class="RegisterValue" id="R7">0123</div>
-		      <div class="RegisterName">R8</div>
-		      <div class="RegisterValue" id="R8">0123</div>
-		      <div class="RegisterName">R9</div>
-		      <div class="RegisterValue" id="R9">0123</div>
-		      <div class="RegisterName">R10</div>
-		      <div class="RegisterValue" id="R10">0123</div>
-		      <div class="RegisterName">R11</div>
-		      <div class="RegisterValue" id="R11">0123</div>
-		      <div class="RegisterName">R12</div>
-		      <div class="RegisterValue" id="R12">0123</div>
-		      <div class="RegisterName">R13</div>
-		      <div class="RegisterValue" id="R13">0123</div>
-		      <div class="RegisterName">R14</div>
-		      <div class="RegisterValue" id="R14">0123</div>
-		      <div class="RegisterName">R15</div>
-		      <div class="RegisterValue" id="R15">0123</div>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="InstructionDecode">
-		    <div class="Decode">
-		      <div class="DecodeSecName">Decode Instruction</div>
-		      <div class="DecodeName">Code</div>
-		      <div class="DecodeValue" id="InstrCode"></div>
-		      <div class="DecodeName">Fmt</div>
-		      <div class="DecodeValue" id="InstrFmt"></div>
-		      <div class="DecodeName">Op</div>
-		      <div class="DecodeValue" id="InstrOp"></div>
-		      <div class="DecodeName">Args</div>
-		      <div class="DecodeValue" id="InstrArgs"></div>
-		      <div class="DecodeName">EA</div>
-		      <div class="DecodeValue" id="InstrEA"></div>
-		      <div class="DecodeName">CC</div>
-		      <div class="DecodeValue" id="InstrCC"></div>
-		      <div class="DecodeName">Act</div>
-		      <div class="DecodeValue" id="InstrEffect1"></div>
-		      <div class="DecodeName">Act</div>
-		      <div class="DecodeValue" id="InstrEffect2"></div>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="Emulator">
-		    <div class="Registers">
-		      <div class="NewRegSecName">Emulator</div>
-		      <div class="RegisterName">s</div>
-		      <div class="RegisterValue" id="procStatus"></div>
-		      <div class="RegisterName">n</div>
-		      <div class="RegisterValue" id="nInstrExecuted"></div>
-		      <div class="RegisterName">m</div>
-		      <div class="RegisterValue">break</div>
-		      <input class="EmCtlLine" id="TimerButton"
-			     type="button"
-			     value="Timer interrupt"
-			     onclick="timerInterrupt()">
-		      </input>
-		      <input class="EmCtlLine" id="FullDisplayToggleButton"
-			      type="button"
-			      onclick="toggleFullDisplay()">
-		      </input>
-		    </div>
-		  </div>
-		  <div class="ProcStateSection" id="MemSection">
-		    <div class="MemSecName">Memory</div>
-		    <div class="MemDisplay" id="MemDisplay1"></div>
-		    <div class="MemDisplay" id="MemDisplay2"></div>
-		  </div>
-		  <div class="ProcStateSection" id="IOSection">
-		    <div class="IOSecName">Input/Output</div>
-		    <div class="IOlog" id="IOlog">
-	      <!--
-		      <div id="IOlogHtmlArea"></div>
--->
-		    </div>
-                    <textarea spellcheck="false" id="IOinputBuffer"></textarea>
-		    <div id="IOInbufLabel">Input Buffer</div>
-		  </div>
-		</div>
-		<div id="ProcAsmListing"></div>
-	      </div>
-	    </div>
 
+
+		<!-- DO NOT REMOVE - couses trouble -->
 	    <div class="Pane" id="TestPane">
 	      <div class="PaneButtons">
 		<button onclick="testpane1();"> testpane 1 </button>
@@ -332,10 +182,8 @@
 	      </div>
 	      <div class="PaneBody" id="TestPaneBody">
 		<div id="TestListing">
-		  <pre class="CodePre"><code class="HighlightedTextAsHtmlExperiment">hello there
-another line
-		      and a third
-
+		  <pre class="CodePre"><code class="HighlightedTextAsHtmlExperiment">
+			  some tupid text here
 		  </code></pre>
 		  <span class="solarized-green">Solarized green</span>
 		  <span class="solarized-blue">Solarized blue</span>
@@ -344,28 +192,179 @@ another line
 		  <span class="solarized-violet">Solarized violet</span>
 		  <span class="solarized-magenta">Solarized magenta</span>
 		  <span class="solarized-orange">Solarized orange</span>
-		  <span class="solarized-yellow">Solarized yellow</span>
-		      
+		  <span class="solarized-yellow">Solarized yellow</span>  
 
 		</div>
 	      </div>
-	    </div>
+		</div>
+		
+
 	  </div>
 
-	  <div class="MidLeftRightSeparator">
-	  </div>
-
+	<!-- RIGHT PANEL -->
 	  <div class="MidMainRight" id="MidMainRight">
-  	    <iframe src="docs/intro.html"
-		    name="UserGuideIframe"
-		    id="UserGuideIframeId">
-	    </iframe>
-	  </div>
+		<!-- PROCESSOR PANE -->
+		<div class="Pane" id="ProcessorPane">
+			<div class="PaneButtons">
+		  <button onclick="procReset(emulatorState)"> Reset </button>
+		  <button onclick="boot(emulatorState)"> Boot </button>
+		  <button onclick="procStep(emulatorState)"> Step </button>
+		  <button onclick="procRun(emulatorState)"> Run </button>
+		  <button onclick="procPause(emulatorState)">Pause</button>
+		  <button onclick="procInterrupt(emulatorState)">Interrupt</button>
+		  <button onclick="procBreakpoint(emulatorState)">Breakpoint</button>
+			</div>
+			<div class="PaneBody" id="ProcessorBody">
+		  <div id="ProcessorState">
+			<div class="ProcStateSection" id="InstructionRegisters">
+			  <div class="Registers">
+				<div class="NewRegSecName">Control</div>
+				<div class="RegisterName">pc</div>
+				<div class="RegisterValue" id='pcElt'></div>
+				<div class="RegisterName">ir</div>
+				<div class="RegisterValue" id='irElt'></div>
+				<div class="RegisterName">adr</div>
+				<div class="RegisterValue" id='adrElt'></div>
+				<div class="RegisterName">dat</div>
+				<div class="RegisterValue" id='datElt'></div>
+				<div class="RegisterName">status</div>
+				<div class="RegisterValue" id="statusElt"></div>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="InterruptRegisters">
+			  <div class="Registers">
+				<div class="NewRegSecName">Interrupt</div>
+				<div class="RegisterName">mask</div>
+				<div class="RegisterValue" id="maskElt"></div>
+				<div class="RegisterName">req</div>
+				<div class="RegisterValue" id="reqElt"></div>
+				<div class="RegisterName">istat</div>
+				<div class="RegisterValue" id='istatElt'></div>
+				<div class="RegisterName">ipc</div>
+				<div class="RegisterValue" id='ipcElt'></div>
+				<div class="RegisterName">vect</div>
+				<div class="RegisterValue" id="vectElt"></div>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="SegmentRegisters">
+			  <div class="Registers">
+				<div class="NewRegSecName">Segment</div>
+				<div class="RegisterName">seg</div>
+				<div class="RegisterValue" id="sEnableElt"></div>
+				<div class="RegisterName">bpseg</div>
+				<div class="RegisterValue" id="bpsegElt">0000</div>
+				<div class="RegisterName">epseg</div>
+				<div class="RegisterValue" id="epsegElt">ffff</div>
+				<div class="RegisterName">bdseg</div>
+				<div class="RegisterValue" id="bdsegElt">0000</div>
+				<div class="RegisterName">edseg</div>
+				<div class="RegisterValue" id="edsegElt">ffff</div>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="RegisterFile">
+			  <div class="Registers">
+				<div class="NewRegSecName">Reg File</div>
+				<div class="RegisterName">R0</div>
+				<div class="RegisterValue" id="R0">0123</div>
+				<div class="RegisterName">R1</div>
+				<div class="RegisterValue" id="R1">0123</div>
+				<div class="RegisterName">R2</div>
+				<div class="RegisterValue" id="R2">0123</div>
+				<div class="RegisterName">R3</div>
+				<div class="RegisterValue" id="R3">0123</div>
+				<div class="RegisterName">R4</div>
+				<div class="RegisterValue" id="R4">0123</div>
+				<div class="RegisterName">R5</div>
+				<div class="RegisterValue" id="R5">0123</div>
+				<div class="RegisterName">R6</div>
+				<div class="RegisterValue" id="R6">0123</div>
+				<div class="RegisterName">R7</div>
+				<div class="RegisterValue" id="R7">0123</div>
+				<div class="RegisterName">R8</div>
+				<div class="RegisterValue" id="R8">0123</div>
+				<div class="RegisterName">R9</div>
+				<div class="RegisterValue" id="R9">0123</div>
+				<div class="RegisterName">R10</div>
+				<div class="RegisterValue" id="R10">0123</div>
+				<div class="RegisterName">R11</div>
+				<div class="RegisterValue" id="R11">0123</div>
+				<div class="RegisterName">R12</div>
+				<div class="RegisterValue" id="R12">0123</div>
+				<div class="RegisterName">R13</div>
+				<div class="RegisterValue" id="R13">0123</div>
+				<div class="RegisterName">R14</div>
+				<div class="RegisterValue" id="R14">0123</div>
+				<div class="RegisterName">R15</div>
+				<div class="RegisterValue" id="R15">0123</div>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="InstructionDecode">
+			  <div class="Decode">
+				<div class="DecodeSecName">Decode Instruction</div>
+				<div class="DecodeName">Code</div>
+				<div class="DecodeValue" id="InstrCode"></div>
+				<div class="DecodeName">Fmt</div>
+				<div class="DecodeValue" id="InstrFmt"></div>
+				<div class="DecodeName">Op</div>
+				<div class="DecodeValue" id="InstrOp"></div>
+				<div class="DecodeName">Args</div>
+				<div class="DecodeValue" id="InstrArgs"></div>
+				<div class="DecodeName">EA</div>
+				<div class="DecodeValue" id="InstrEA"></div>
+				<div class="DecodeName">CC</div>
+				<div class="DecodeValue" id="InstrCC"></div>
+				<div class="DecodeName">Act</div>
+				<div class="DecodeValue" id="InstrEffect1"></div>
+				<div class="DecodeName">Act</div>
+				<div class="DecodeValue" id="InstrEffect2"></div>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="Emulator">
+			  <div class="Registers">
+				<div class="NewRegSecName">Emulator</div>
+				<div class="RegisterName">s</div>
+				<div class="RegisterValue" id="procStatus"></div>
+				<div class="RegisterName">n</div>
+				<div class="RegisterValue" id="nInstrExecuted"></div>
+				<div class="RegisterName">m</div>
+				<div class="RegisterValue">break</div>
+				<input class="EmCtlLine" id="TimerButton"
+				   type="button"
+				   value="Timer interrupt"
+				   onclick="timerInterrupt()">
+				</input>
+				<input class="EmCtlLine" id="FullDisplayToggleButton"
+					type="button"
+					onclick="toggleFullDisplay()">
+				</input>
+			  </div>
+			</div>
+			<div class="ProcStateSection" id="MemSection">
+			  <div class="MemSecName">Memory</div>
+			  <div class="MemDisplay" id="MemDisplay1"></div>
+			  <div class="MemDisplay" id="MemDisplay2"></div>
+			</div>
+			<div class="ProcStateSection" id="IOSection">
+			  <div class="IOSecName">Input/Output</div>
+			  <div class="IOlog" id="IOlog">
+			  </div>
+					  <textarea spellcheck="false" id="IOinputBuffer"></textarea>
+			  <div id="IOInbufLabel">Input Buffer</div>
+			</div>
+		  </div>
+		  <div id="ProcAsmListing"></div>
+			</div>
+		  </div>
+
+		
+	  </div> 
+
+
  	</div>
       </div>
-      <div class="BottomSection">
-      </div>
 	</div>
+
+	<!-- MU JS -->
 	<script src="assets/js/lite.js"></script>
   </body>
 </html>
