@@ -134,18 +134,9 @@ function showEffect (es,i) {
 
 function boot(es) {
 
-    // // SET WIDTH:
-    // console.log("Here you go:")
-    // console.log(midMainRight);
-    // var width = document.querySelector(".MidMainRight .Pane").style.width;
-    // console.log(width);
-    // console.log(document.querySelector("#ProcAsmListing"))
-    // console.log(document.querySelector(".MidMainRight .Pane"));
-    
+
     // ASSEMBLE
     assembler()
-
-    // ------------------------
 
 
     console.log ('boot');
