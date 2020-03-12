@@ -635,7 +635,8 @@ function executeInstruction (es) {
     console.log ('executeInstruction');
     es.nInstructionsExecuted++;
     document.getElementById("nInstrExecuted").innerHTML = es.nInstructionsExecuted;
-
+    
+    
 // Check for interrupt
     let mr = mask.get() & req.get();
 //    console.log (`interrupt mr = ${wordToHex4(mr)}`);

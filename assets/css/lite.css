@@ -83,7 +83,7 @@
 
 #IOSection{
     /* background-color: #222222;  */
-    min-width: 0;
+    min-width: 20px;
     width: calc(100% - 300px) !important;
     height: 280px !important;
     display: block !important;
@@ -104,4 +104,14 @@ textarea{
 
 #ProcAsmListing{
     max-height: 50vh;
+}
+
+.HighlightedTextAsHtml{
+    overflow: visible;
+}
+
+#nInstrExecuted{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
 }
