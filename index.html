@@ -134,66 +134,6 @@
 
 
 			<!-- PANES -->
-			<!-- EXAMPLE PANE -->
-			<div class="Pane" id="ExamplesPane">
-				<div class="PaneButtons">
-					<button onclick="examplesHome()">Back</button>
-					<button onclick="selectExample()">Select</button>
-				</div>
-				<div class="PaneBody" id="ExamplesPane">
-					<iframe src="documentation/examples/index.html"
-						name="ExamplesIframe"
-						id="ExamplesIframeId">
-					</iframe>
-				</div>
-			</div>
-
-			<!-- WELCOME PANE -->
-			<div class="Pane" id="WelcomePane">
-				<div class="PaneButtons">
-			<button onclick="jumpToGuideTop()">
-				Contents
-			</button>
-			<button onclick="jumpToGuideSection('tutorials')">
-				Tutorials
-			</button>
-			<button onclick="jumpToGuideSection('architecture');">
-				Architecture
-			</button>
-			<button onclick="jumpToGuideSection('instruction-set');">
-				Instruction set
-			</button>
-			<button onclick="jumpToGuideSection('assembly-language');">
-				Assembly language
-			</button>
-			<button onclick="jumpToGuideSection('linker');">
-				Linker
-			</button>
-			<button onclick="jumpToGuideSection('programming');">
-				Programming
-			</button>
-			<button onclick="jumpToGuideSection('about-sigma16');">
-				About Sigma16
-			</button>
-
-				</div>
-				<div class="PaneBody" id="WelcomeHtml">
-			<div class="HtmlUnscrolled">
-				<iframe src="docs/intro.html"
-					name="WelcomeIframe"
-					id="WelcomeIframeId">
-				</iframe>
-			</div>
-				</div>
-			</div>
-
-			<!-- ASSEMBLER PANE -->
-			<div class="Pane" id="AssemblerPane">
-			<div class="HighlightedTextAsHtml" id="AssemblerBody">
-				<div id="AsmTextHtml"></div>
-			</div>
-			</div>
-
 			<!-- PROCESSOR PANE -->
 			<div class="Pane" id="ProcessorPane">
 				<div class="PaneButtons">
@@ -353,6 +293,57 @@
 					<div id="ProcAsmListing"></div>
 				</div>
 			</div>
+
+			<!-- ASSEMBLER PANE -->
+			<div class="Pane" id="AssemblerPane">
+				<div class="HighlightedTextAsHtml" id="AssemblerBody">
+					<div id="AsmTextHtml"></div>
+				</div>
+			</div>
+			
+			<!-- WELCOME PANE - documentation-->
+			<div class="Pane" id="WelcomePane">
+				<div class="PaneButtons unused">
+					<button onclick="jumpToGuideSection('tutorials')">
+						Tutorials
+					</button>
+					<button onclick="jumpToGuideSection('architecture');">
+						Architecture
+					</button>
+					<button onclick="jumpToGuideSection('instruction-set');">
+						Instruction set
+					</button>
+					<button onclick="jumpToGuideSection('assembly-language');">
+						Assembly language
+					</button>
+					<button onclick="jumpToGuideSection('programming');">
+						Programming
+					</button>
+				</div>
+				<div class="PaneBody" id="WelcomeHtml">
+					<div class="HtmlUnscrolled">
+						<iframe src="documentation/guide/userguide.html"
+							name="WelcomeIframe"
+							id="WelcomeIframeId">
+						</iframe>
+					</div>
+				</div>
+			</div>
+
+			<!-- EXAMPLE PANE -->
+			<div class="Pane" id="ExamplesPane">
+				<div class="PaneButtons">
+					<button onclick="examplesHome()">Back</button>
+					<button onclick="selectExample()">Select</button>
+				</div>
+				<div class="PaneBody" id="ExamplesPane">
+					<iframe src="documentation/examples/index.html"
+						name="ExamplesIframe"
+						id="ExamplesIframeId">
+					</iframe>
+				</div>
+			</div>
+
 		</div> 
 
 	</div> <!-- MiddleMainSection -->

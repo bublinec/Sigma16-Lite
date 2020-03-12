@@ -28,14 +28,18 @@
 .Pane{
     background-color: #222222;
     max-width: 100% !important;
+    /* change onload (in gui.js) */
+    display: none; 
 }
 
 .MidMainRight .Pane{
     height: 94%;
+    height: 110%;
 }
 
 .PaneBody{
     background-color: #222222;
+    height: 100%;
 }
 
 .PaneButtons{
@@ -44,6 +48,10 @@
 }
 
 #EditorBody{
+    height: 100%;
+}
+
+#ExamplesIframeId{
     height: 100%;
 }
 
