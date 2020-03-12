@@ -6,6 +6,7 @@
 .keyword{
     color: #9c0a00;
 }
+
 .MiddleSection{
     margin-top: 10px;
 }
@@ -53,7 +54,7 @@ iframe{
 button {
     border: none;
     background: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin: 0.2rem;
     height: 110%;
     padding: 5px 5px 2px 5px;

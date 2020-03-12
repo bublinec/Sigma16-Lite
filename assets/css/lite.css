@@ -1,3 +1,4 @@
+/* FIXING EVERYTHING */
 :root{
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
@@ -123,3 +124,60 @@ textarea{
     text-align: center;
     margin-top: 5px;
 }
+
+/* ACTUAL CSS */
+body{
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.PaneButtons{
+    height: 40px;
+}
+
+button {
+    font-family: 'Ubuntu', sans-serif;
+    border: none;
+    background: none;
+    /* text-transform: uppercase; */
+    /* margin: 0.2rem; */
+    height: 40px;
+    padding: 5px 5px 5px 5px;
+
+    font-weight: 600;
+    color: #FDFFFC;
+    letter-spacing: px;
+    font-size: 1rem;
+    transition: all 0.4s;
+    outline: none;
+}
+
+button:hover {
+    /* color: #E71D36; */
+    color: #9c0a00;
+    background: #FDFFFC;
+}
+
+/* Tool tip */
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  

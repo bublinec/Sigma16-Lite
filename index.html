@@ -14,6 +14,8 @@
 	<script src="assets/js/gui.js"> </script>
 	<link rel="stylesheet" href="assets/css/gui.css" type="text/css">
 	<link rel="stylesheet" href="assets/css/lite.css"> 
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   </head>
 
 
@@ -50,10 +52,10 @@
 				<!-- EDITOR NAV -->
 			<div class="PaneButtons">
 				<button onclick="editorClear()">Clear</button>
-				<button onclick="newModule()">New</button>
 				<button onclick="insert_example(example_hello_world);">Hello, world!</button>
-				<button onclick="editorDownload()">Save in downloads
-					<a download="S16DownloadFile.txt" id="editorDownloadAnchor" style="display: none"></a>
+				<input id="file_name" type="text">
+				<button title="Save" onclick="editorDownload()"><i class="fas fa-download"></i>
+					<a download="this.txt" id="editorDownloadAnchor" style="display: none"></a>
 				</button>
 			</div>
 			<!-- EDITOR BODY -->
