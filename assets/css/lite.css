@@ -157,7 +157,7 @@
 
 
 #ProcAsmListing{
-    max-height: calc(50vh - 23px);
+    max-height: calc(55vh -10px);
 }
 
 
@@ -324,12 +324,7 @@ input[type=text]{
     overflow-y: initial;
 }
 
-/* Editor */
-textarea:focus{
-    outline: none;
-}
-
-/* Color feature */
+/* Color input */
 input[type=color]{
     float: right;
     padding: 9px;
@@ -350,3 +345,45 @@ input[type=color]:focus{
     outline: none;
 }
 
+/* Editor */
+textarea:focus{
+    outline: none;
+}
+
+/* Code coloring */
+:root{
+    --comments: #024d15; 
+    --commands: #b60202;
+    --arguments: #12055f;
+    --header: #530439;
+    --text-color-err: red;
+}
+
+.ListingHeader{
+    color: var(--header);
+    font-weight: 900;
+}
+
+.FIELDCOMMENT{
+    color: var(--comments);
+}
+
+.FIELDOPERATION{
+    color: var(--commands);
+    font-weight: 900;
+}
+
+.FIELDOPERAND{
+    color: var(--arguments);
+    font-weight: 800;
+}
+
+.ERR{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.CUR{
+    font-weight: bold;
+    color: var(--text-color-err);
+}
