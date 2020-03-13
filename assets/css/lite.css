@@ -86,7 +86,6 @@
 .Registers{
     height:280px;
     padding-right: 2px; 
-    border-radius: 1px;
     grid-template-columns: [RegVlineStart] 30px
                            [RegVlineRNameEnd] 0
                            [RegVlineRValStart] 37px
@@ -248,7 +247,7 @@ button:hover {
 /* Logo */
 #logo{
     font-size: 20px;
-    font-weight: 570;
+    font-weight: 580;
     float: left;
     padding: 8px;
     margin-right: 10px;
@@ -261,7 +260,7 @@ button:hover {
 
 #logo a:hover{
     font-size: 21;
-    color: var(--main);
+    color: var(--white);
 }
 
 /* File name text input */
