@@ -1,8 +1,9 @@
 :root{
     /* My */
-    --blue: #b0faf6;
+    --main: #e24042;
     --white:#FFFAFA;
     --gray: #222222;
+    --light: #ebcbcb;
 
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
@@ -73,16 +74,45 @@
 .ProcStateSection{
     height:100%;
     float: left;
+    border: solid 1px black;
 }
 
 #RegisterFile{
     max-width: 80px;
     min-height: 280px;
+    background-color: var(--main);
+}
+
+.Registers{
+    height:280px;
+    padding-right: 2px; 
+    border-radius: 1px;
+    grid-template-columns: [RegVlineStart] 30px
+                           [RegVlineRNameEnd] 0
+                           [RegVlineRValStart] 37px
+                           [RegVlineEnd];
+}
+
+.Registers div:nth-child(4n){
+    background-color: var(--light) ;
+}
+
+.Registers div:nth-child(4n+5){
+    background-color: var(--light);
+}
+
+.NewRegSecName{
+    width: 70px;
+}
+
+.NewRegSecName{
+    background-color: var(--main);
 }
 
 #MemSection{
     height: 280px;
     max-width: 200px;
+    background-color: var(--main);
 }
 
 .MemDisplay{
@@ -96,25 +126,35 @@
 }
 
 #IOSection{
-    /* background-color: #222222;  */
+    background-color: var(--main); 
     min-width: 20px;
     width: calc(100% - 300px) !important;
     height: 280px !important;
     display: block !important;
 }
 
-textarea{
-    width: calc(100% - 6px) !important;
+#IOSection textarea{
+    width: calc(100% - 10px) !important;
     display: block;
-    margin: 0;
+    margin: 2px;
     margin-bottom: 3px;
     background-color: var(--white) !important;
     height: 40px;
+    border-color: var(--gray) ;
+    border-radius: 3px;
+}
+
+#IOInbufLabel{
+    background-color: transparent;
+    padding-top: 2px;
 }
 
 .IOlog{
-    border: none;
+    border: solid 1px var(--gray) !important;
+    border-radius: 3px;
 }
+
+
 
 #ProcAsmListing{
     max-height: 50vh;
@@ -154,7 +194,7 @@ button {
 }
 
 button:hover {
-    color: var(--blue);
+    color: var(--main);
 }
 
 /* Left */
@@ -171,7 +211,7 @@ button:hover {
 /* Right */
 .MidMainRight button:hover{
     background-color: var(--white);
-    color: var(--gray);
+    color: var(--main);
 }
 
 .navbar button{
@@ -189,6 +229,7 @@ button:hover {
 #ProcessorPane .PaneButtons button{
     font-size:  1.5rem;
     width: 40px;
+    padding-top: 7px;
 }
 
 #ExamplesPane .PaneButtons button{
@@ -199,12 +240,12 @@ button:hover {
 /* #ProcessorPane .PaneButtons button:hover{
     font-size:  1.5rem;
     background-color: var(--gray);
-    color: var(--blue);
+    color: var(--main);
 } */
 
 /* .RightButton:hover{
     background-color: var(--gray) !important;
-    color: var(--blue) !important;
+    color: var(--main) !important;
 } */
 
 /* Logo */
@@ -217,13 +258,13 @@ button:hover {
 }
 
 #logo a{
-    color: var(--white);
+    color: var(--main);
     text-decoration: none;
 }
 
 #logo a:hover{
     font-size: 21;
-    color: var(--blue);
+    color: var(--main);
 }
 
 /* File name text input */
@@ -235,7 +276,7 @@ input[type=text]{
     border: none;
     background-color: transparent;
     border-bottom: 1px solid var(--white);
-    color: var(--blue);
+    color: var(--white);
     width: 120px;
     height: 25px;
     margin: 7px 10px 0px 5px;
@@ -244,8 +285,8 @@ input[type=text]{
 }
 
 ::placeholder{
-    color: var(--blue);
-    font-weight: 300;
+    color: var(--white);
+    font-weight: 100;
 }
 
 /* Editor */
