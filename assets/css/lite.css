@@ -1,10 +1,13 @@
-/* FIXING EVERYTHING */
 :root{
+    /* My */
+    --blue: #b0faf6;
+    --white:#FFFAFA;
+    --gray: #222222;
+
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
     --frameVBorderThickness: 0;
     --full-frame-background-color: #222222;
-    /* --topSectionHeight: 0;  */
     --mid-main-right-background-color: #222222;
     --paneButtonsHeight: 0;
     --paneSecPadding: 0;
@@ -28,7 +31,7 @@
 }
 
 .Pane{
-    background-color: #222222;
+    background-color: var(--gray);
     max-width: 100% !important;
     /* change onload (in gui.js) */
     display: none; 
@@ -40,13 +43,13 @@
 }
 
 .PaneBody{
-    background-color: #222222;
+    background-color: var(--gray);
     height: 100%;
 }
 
 .PaneButtons{
     height: 40px;
-    background-color: #222222;
+    background-color: var(--gray);
     border-bottom: solid 2px black;
 }
 
@@ -64,7 +67,7 @@
 
 #ProcessorState{
     display: block;
-    background-color: #222222;
+    background-color: var(--gray);
 }
 
 .ProcStateSection{
@@ -79,7 +82,7 @@
 
 #MemSection{
     height: 280px;
-    max-width: 200  px;
+    max-width: 200px;
 }
 
 .MemDisplay{
@@ -105,7 +108,7 @@ textarea{
     display: block;
     margin: 0;
     margin-bottom: 3px;
-    background-color: white !important;
+    background-color: var(--white) !important;
     height: 40px;
 }
 
@@ -127,39 +130,48 @@ textarea{
     margin-top: 5px;
 }
 
+/* ************************************************************************ */
 /* ACTUAL CSS */
 body{
     font-family: 'Ubuntu', sans-serif !important;
 }
 
-/* Navbar */
-.PaneButtons{
-    height: 40px;
-}
-
-#EditorPane .PaneButtons{
-    height: 42px;
-}
+/* Buttons */
 
 button {
     font-family: 'Ubuntu', sans-serif;
     border: none;
     background: none;
-    /* text-transform: uppercase; */
-    /* margin: 0.2rem; */
     height: 40px;
-    padding: 7px 6px 3px 6px;
+    padding: 3px 6px 3px 6px;
     font-weight: 600;
-    color: #FDFFFC;
-    /* letter-spacing: px; */
     font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 1px;
     transition: all 0.4s;
     outline: none;
     float: left;
 }
 
 button:hover {
-    color: #b0faf6;;
+    color: var(--blue);
+}
+
+/* Left */
+.MidMainLeft .PaneButtons{
+    height: 42px;
+}
+
+.MidMainLeft button{
+    font-size:  1.3rem;
+    padding: 10px 7px 2px 7px;
+    height: 20px;
+}
+
+/* Right */
+.MidMainRight button:hover{
+    background-color: var(--white);
+    color: var(--gray);
 }
 
 .navbar button{
@@ -168,17 +180,32 @@ button:hover {
     height: 40px;
 }
 
-#ProcessorPane .PaneButtons{
-    font-size:  1.6rem;
-    padding: 8px 7px 2px 7px;
-    height: 20px;
+#ProcessorPane .PaneButtons {
+    padding: 0px 0px 0px 0px;
+    height: 40px;
+    border: none;
 }
 
-.MidMainLeft button{
-    font-size:  1.4rem;
-    padding: 8px 7px 2px 7px;
-    height: 20px;
+#ProcessorPane .PaneButtons button{
+    font-size:  1.5rem;
+    width: 40px;
 }
+
+#ExamplesPane .PaneButtons button{
+    font-size:  1.5rem;
+    width: 40px;
+} 
+
+/* #ProcessorPane .PaneButtons button:hover{
+    font-size:  1.5rem;
+    background-color: var(--gray);
+    color: var(--blue);
+} */
+
+/* .RightButton:hover{
+    background-color: var(--gray) !important;
+    color: var(--blue) !important;
+} */
 
 /* Logo */
 #logo{
@@ -190,17 +217,16 @@ button:hover {
 }
 
 #logo a{
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 
 #logo a:hover{
     font-size: 21;
-    color: #b0faf6;
+    color: var(--blue);
 }
 
 /* File name text input */
-
 input[type=text]{
     font-size: 16px;
     font-weight: 300;
@@ -208,27 +234,22 @@ input[type=text]{
     letter-spacing: 1px;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid white;
-    color: #b0faf6;
-    width: 100px;
+    border-bottom: 1px solid var(--white);
+    color: var(--blue);
+    width: 120px;
     height: 25px;
-    margin: 7px 5px 0px 5px;
+    margin: 7px 10px 0px 5px;
     outline: none;
     float: left;
 }
 
 ::placeholder{
-    color: #b0faf6;
+    color: var(--blue);
     font-weight: 300;
 }
-input[type=text]:focus {
-    
-}
 
-
-:root{
-    --blue: #11998e;
-    --white: #38ef7d;
-    --gray: #9b9b9b;
+/* Editor */
+textarea:focus{
+    outline: none;
 }
 

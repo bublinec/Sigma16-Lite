@@ -131,8 +131,8 @@
 				<button onclick="welcome_pane_button()"> Guide </button>
 				<button onclick="examples_pane_button()"> Examples </button>
 				<!-- RESIZING MidRight -->
-				<button class="RightButton" onclick="user_guide_resize(20)">&#x27f9;</button>
-				<button class="RightButton" onclick="user_guide_resize(-20)">&#x27f8;</button>
+				<button title="Resize" class="RightButton" onclick="user_guide_resize(20)">&#x27f9;</button>
+				<button title="Resize" class="RightButton" onclick="user_guide_resize(-20)">&#x27f8;</button>
 			</div>
 
 
@@ -140,7 +140,7 @@
 			<!-- PROCESSOR PANE -->
 			<div class="Pane" id="ProcessorPane">
 				<div class="PaneButtons">
-					<button title="Boot" onclick="boot(emulatorState)"><i class="fab fa-bootstrap"></i></button>
+					<button title="Assemble and Boot" onclick="boot(emulatorState)"><i class="fas fa-angle-double-right"></i></button>
 					<button title="Reset" onclick="procReset(emulatorState)"> <i class="fas fa-times"></i></i> </button>
 					<button title="Step" onclick="procStep(emulatorState)"> <i class="fas fa-step-forward"></i> </button>
 					<button title="Run" onclick="procRun(emulatorState)"> <i class="fas fa-play"></i> </button>
@@ -283,11 +283,11 @@
 								<div class="MemDisplay" id="MemDisplay2"></div>
 							</div>
 							<div class="ProcStateSection" id="IOSection">
-								<div id="IOInbufLabel">Input</div>
+								<div id="IOInbufLabel">Input Buffer</div>
 								<textarea spellcheck="false" id="IOinputBuffer"></textarea>
 								<div class="IOSecName">Output</div>
 								<div class="IOlog" id="IOlog"></div>
-								<div class="RegisterValue" id="nInstrExecuted">0</div>
+								<div title="Instruction number" class="RegisterValue" id="nInstrExecuted">0</div>
 
 							</div>
 						</div>
@@ -336,8 +336,8 @@
 			<!-- EXAMPLE PANE -->
 			<div class="Pane" id="ExamplesPane">
 				<div class="PaneButtons">
-					<button onclick="examplesHome()">Back</button>
-					<button onclick="selectExample()">Select</button>
+					<button title="Home" onclick="examplesHome()"><i class="fas fa-arrow-left"></i></button>
+					<button title="Select Example" onclick="selectExample()"><i class="fas fa-check"></i></button>
 				</div>
 				<div class="PaneBody" id="ExamplesPane">
 					<iframe src="documentation/examples/index.html"
