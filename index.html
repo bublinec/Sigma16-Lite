@@ -13,7 +13,7 @@
     <script src="assets/js/emulator.js"> </script>
 	<script src="assets/js/gui.js"> </script>
 	<link rel="stylesheet" href="assets/css/gui.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/lite.css"> 
+	<link rel="stylesheet" href="assets/css/lite.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   </head>
@@ -51,12 +51,13 @@
 			<div class="Pane" id="EditorPane">
 				<!-- EDITOR NAV -->
 			<div class="PaneButtons">
-				<button onclick="editorClear()">Clear</button>
-				<button onclick="insert_example(example_hello_world);">Hello, world!</button>
-				<input id="file_name" type="text">
+				<div id="logo"><a href="index.html">Sigma16</a></div>
+				<input id="file_name" type="text" placeholder="File name">
 				<button title="Save" onclick="editorDownload()"><i class="fas fa-download"></i>
 					<a download="this.txt" id="editorDownloadAnchor" style="display: none"></a>
 				</button>
+				<button title="New File" onclick="editorClear()"><i class="far fa-file"></i></button>
+				<button title="Hello World!" onclick="insert_example(example_hello_world);"><i class="far fa-file-code"></i></button>
 			</div>
 			<!-- EDITOR BODY -->
 			<div class="PaneBody" id="EditorBody">
