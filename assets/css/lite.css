@@ -55,7 +55,7 @@
 }
 
 #EditorBody{
-    height: 100%;
+    height: calc(100% - 25px);
 }
 
 #ExamplesIframeId{
@@ -157,12 +157,9 @@
 
 
 #ProcAsmListing{
-    max-height: 50vh;
+    max-height: calc(50vh - 23px);
 }
 
-.HighlightedTextAsHtml{
-    overflow: visible;
-}
 
 #nInstrExecuted{
     font-size: 20px;
@@ -292,7 +289,8 @@ input[type=text]{
 /* Scrollbar */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
+    height: 8px;
   }
   
   /* Track */
@@ -311,6 +309,20 @@ input[type=text]{
   ::-webkit-scrollbar-thumb:hover {
     background: var(--main); 
   }
+
+/* Avoid two scrollbars */
+#AssemblerPane .HighlightedTextAsHtml{
+    overflow-y: initial;
+    height: calc(100% - 52px);
+}
+
+#AssemblerPane pre{
+    overflow-y: scroll !important;
+}
+/* Also for the processor pane */
+.HighlightedTextAsHtml{
+    overflow-y: initial;
+}
 
 /* Editor */
 textarea:focus{
