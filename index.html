@@ -56,7 +56,7 @@
 				<button title="Save" onclick="editorDownload()"><i class="fas fa-download"></i>
 					<a download="this.txt" id="editorDownloadAnchor" style="display: none"></a>
 				</button>
-				<button title="New File" onclick="editorClear()"><i class="far fa-file"></i></button>
+				<button title="Clear" onclick="editorClear()"><i class="fas fa-trash"></i></button>
 				<button title="Hello World!" onclick="insert_example(example_hello_world);"><i class="far fa-file-code"></i></button>
 			</div>
 			<!-- EDITOR BODY -->
@@ -140,11 +140,11 @@
 			<!-- PROCESSOR PANE -->
 			<div class="Pane" id="ProcessorPane">
 				<div class="PaneButtons">
-					<button onclick="boot(emulatorState)"> Boot </button>
-					<button onclick="procReset(emulatorState)"> Reset </button>
-					<button onclick="procStep(emulatorState)"> Step </button>
-					<button onclick="procRun(emulatorState)"> Run </button>
-					<button onclick="procPause(emulatorState)">Pause</button>
+					<button title="Boot" onclick="boot(emulatorState)"><i class="fab fa-bootstrap"></i></button>
+					<button title="Reset" onclick="procReset(emulatorState)"> <i class="fas fa-times"></i></i> </button>
+					<button title="Step" onclick="procStep(emulatorState)"> <i class="fas fa-step-forward"></i> </button>
+					<button title="Run" onclick="procRun(emulatorState)"> <i class="fas fa-play"></i> </button>
+					<button title="Pause" onclick="procPause(emulatorState)"><i class="fas fa-pause"></i></button>
 					<!-- <button onclick="procInterrupt(emulatorState)">Interrupt</button> -->
 					<!-- <button onclick="procBreakpoint(emulatorState)">Breakpoint</button> -->
 				</div>
