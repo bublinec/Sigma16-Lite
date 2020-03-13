@@ -24,7 +24,10 @@ function editorDownload () {
     let edText = editorBufferTextArea.value;
     downloadElt.href = makeTextFile(edText);  // provide text to download
     var file_name_input = document.querySelector("#file_name").value;
-    downloadElt.setAttribute("download", file_name_input);
+    if(file_name_input == ""){
+        file_name_input = "My_program"
+    }
+    downloadElt.setAttribute("download", file_name_input+".asm");
     downloadElt.click();  // perform the download
 }
 
