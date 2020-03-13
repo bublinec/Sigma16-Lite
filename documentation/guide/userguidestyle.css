@@ -1,8 +1,17 @@
+:root{
+  /* --main: #e24042; */
+  --main: #259fad;
+  --main: #e24042;
+  --background:rgb(225, 230, 229);
+  --gray: #222222;
+  --light: #ebcbcb;
+}
+
 html {
     width: 100%;
     color: black;
-    background: white;
-    font-family: Verdana, sans-serif;
+    background: var(--background);
+    font-family: "Ubuntu", sans-serif;
     font-size: 0.8em;
     line-height: 120%;
 /*
@@ -13,6 +22,10 @@ html {
     right: 0em;
  */
     }
+
+a{
+  color:var(--main) !important;
+}
 
 
 pre {
@@ -29,11 +42,13 @@ code {
     }
 
 h1 {
-    color: #0000ff;
+     color:var(--main) !important;
+
+     color: #0000ff;
      /*     background: #ddeedd; */
-     border: solid;
+     border: solid 3px;
      border-width: thin;
-     border-color: green;
+     border-color: var(--gray);
      padding-top: 0.5em;
      padding-bottom: 0.5em;
      text-align: center;
@@ -44,12 +59,15 @@ h1 {
 
 h2 {
     color: #0000ff;
+    color:var(--main) !important;
     padding-top: 1em;
     text-align: left;
     font-size: 130%;}
 
 h3 {
     color: #0000ff;
+    color:var(--main) !important;
+
     font-size: 120%;
 }
 
@@ -123,9 +141,13 @@ div.titletemp {
 
 
 .floatright {
-    border : dotted; border-width: thin; border-color: red;
+    border : dotted; border-width: thin; border-color: var(--gray);
     padding-left: 1em; padding-right: 1em;
     padding-top: 1em; padding-bottom: 1em;
+}
+
+li::before{
+  color: var(--gray);
 }
 
 
@@ -181,7 +203,7 @@ table.wordlayout, th, td {
 
 .box-around-text {
     border: 1px solid black;
-    background: ivory;
+    background: var(--background);
     width: 80%;
     margin-left: auto;
     margin-right: auto;

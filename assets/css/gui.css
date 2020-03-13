@@ -53,7 +53,7 @@ pane height
     --frameVBorderThickness: 0.25em;
     --full-frame-background-color: var(--dark-blue);
     --topSectionHeight: 1.5em;
-    --top-section-background-color: ivory;
+    --top-section-background-color: var(--background);
     --topMidSecSkip: 0.25em;
     --midSecOffsetBelowTop: calc(var(--frameHBorderThickness) +
 			     var(--topSectionHeight) +
@@ -94,7 +94,7 @@ pane height
     --examplesBotSecHeight: 30em; /* calc or make full height */
 /* Basic GUI elements */
     --button-box-background-color: var(--light-blue);
-    --subpanel-background-color: ivory;
+    --subpanel-background-color: var(--background);
     --mem-display-width: 6.1em;  /* try 12em to confirm line breaks are there */
 
     /* YES???????????  with wide size we get several locations per line,
@@ -225,7 +225,7 @@ guide). */
     box-sizing: border-box;
     border: 4px solid #222222;
     padding: 1em;
-    background: ivory;
+    background: var(--background);
     z-index: 20; /* put it on top */
     display: none;
 }
@@ -345,7 +345,7 @@ guide). */
     height: 100%;
     margin: 0em;  /* needed to make the text fill its box */
     box-sizing: border-box;
-    background-color: ivory;
+    background-color: var(--background);
     font-family: var(--main-font-family);
     font-size: var(--main-font-size);
     overflow-y: scroll;
@@ -373,7 +373,7 @@ guide). */
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-color: ivory;
+    background-color: var(--background);
 }
 
 /* Welcome pane -------------------------------------------------- */
@@ -383,7 +383,7 @@ guide). */
     height: calc(100vh - 10em);
     left: 0em;
     right: 0em;
-    background: ivory;
+    background: var(--background);
 */
 }
 
@@ -422,7 +422,7 @@ guide). */
 /* Editor pane -------------------------------------------------- */
 
 .Editor {
-    background-color: ivory;
+    background-color: var(--background);
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -858,7 +858,7 @@ don't include fonts as these are specified by HighlightedTextAsHtml
 }
 
 #FOOBARAssemblerBody {
-    background: ivory;
+    background: var(--background);
 }
 
 .UNSELECTEDFILE {
