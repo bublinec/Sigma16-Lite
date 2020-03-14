@@ -414,3 +414,22 @@ textarea:focus{
     font-weight: bold;
     color: var(--text-color-err);
 }
+
+.NEXT{
+    color:black;
+}
+
+.FIELDLABEL{
+    font-weight: bold;
+    color: orangered;
+}
+
+.GET{
+    color: var(--commands);
+    font-weight: bold;
+}
+
+pre{
+    padding: 5px 0 25px 5px !important;
+    margin-top: 0;
+}

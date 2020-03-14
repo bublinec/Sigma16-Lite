@@ -475,7 +475,7 @@ function assembler_pane_button() {
 //    console.log("assembler_pane_button clicked")
     hideAllTabbedPanes();
     showTabbedPane("AssemblerPane");
-    assembler()
+    assembler();
     document.querySelectorAll(".navbar button")[1].style.borderBottomColor = "var(--main)";
 }
 

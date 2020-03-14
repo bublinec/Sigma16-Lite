@@ -31,7 +31,7 @@ const CharSet =
       + '"'                      // quotes
       + "'"                      // quotes
       + ".$[]()+-*"                // punctuation
-      + "?¬£`<=>!%^&{}#~@:|/\\";   // other
+      + "?ï¿½ï¿½`<=>!%^&{}#~@:|/\\";   // other
 
 function validateChars (xs) {
     console.log (`validateChars`);
@@ -241,7 +241,7 @@ function mkErrMsg (m,s,err) {
     m.nAsmErrors++;
 }
 
-function assembler () {
+function assembler (comments=true) {
     let m = s16modules[selectedModule];
     console.log(`Assembling module ${selectedModule}`);
     m.modName = null;  // remove name from earlier assembly, if any
@@ -258,11 +258,18 @@ function assembler () {
     document.getElementById('AsmTextHtml').innerHTML = "";
     m.symbolTable.clear();
     m.asmListingPlain.push(
-	"<span class='ListingHeader'>Line Addr Code Code Source</span>");
+	"<span class='ListingHeader'>Line Addr Code  OpAdd  Source\n</span>");
     m.asmListingDec.push(
-	"<span class='ListingHeader'>Line Addr Code Code Source</span>");
+	"<span class='ListingHeader'>Line Addr Code OpAdd  Source\n</span>");
     asmPass1 (m);
-    asmPass2 (m);
+
+    if(comments == true){
+        asmPass2 (m, true);
+    }
+    else{
+        asmPass2 (m, false)
+    }
+
     if (m.nAsmErrors > 0) {
         m.isExecutable = false;
         document.getElementById('ProcAsmListing').innerHTML = "";
@@ -640,7 +647,7 @@ function parseOperation (m,s) {
 	    if (op.search(nameParser) == 0) {
 		mkErrMsg (m, s, `${op} is not a valid operation`);
 	    } else {
-		mkErrMsg (m, s, `syntax error: operation ${op} must be a name`);
+		mkErrMsg (m, s, `syntax error: operation ${op} must be a name (you probably forgot the indent)`);
 	    }
 	}
     }
@@ -944,7 +951,7 @@ function testWd(op,d,a,b) {
     console.log(wordToHex4(mkWord(op,d,a,b)));
 }
 
-function asmPass2 (m) {
+function asmPass2 (m, comments) {
     console.log('assembler pass 2');
     let s, fmt,op,x;
     objectWordBuffer = [];
@@ -1179,7 +1186,7 @@ function asmPass2 (m) {
 	    + s.fieldSpacesAfterLabel
 	    + s.fieldOperation
 	    + s.fieldSpacesAfterOperation
-	    + s.fieldOperands
+	    + s.fieldOperands;
 	    + s.fieldComment;
 	s.listingLineHighlightedFields = (s.lineNumber+1).toString().padStart(4,' ')
 	    + ' ' + wordToHex4(s.address)
@@ -1191,8 +1198,11 @@ function asmPass2 (m) {
 	    + s.fieldSpacesAfterLabel
 	    + highlightField (s.fieldOperation, "FIELDOPERATION")
 	    + s.fieldSpacesAfterOperation
-	    + highlightField (s.fieldOperands, "FIELDOPERAND")
-	    + highlightField (s.fieldComment, "FIELDCOMMENT") ;
+        + highlightField (s.fieldOperands, "FIELDOPERAND");
+        
+    if(comments==true){
+        s.listingLineHighlightedFields += highlightField (s.fieldComment, "FIELDCOMMENT");
+    }
 
 	m.asmListingPlain.push(s.listingLinePlain);
 	m.asmListingDec.push(s.listingLineHighlightedFields);

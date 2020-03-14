@@ -136,7 +136,7 @@ function boot(es) {
 
 
     // ASSEMBLE
-    assembler()
+    assembler(comments=false)
     document.querySelector("#ProcAsmListing").style.display = "block";
 
 
@@ -356,7 +356,7 @@ function setProcAsmListing (es) {
     console.log ('setProcAsmListing');
     let xs = "<pre><code class='HighlightedTextAsHtml'>"
     	+ es.asmListingCurrent.join('\n')
-	+ "</code></pre>";
+    + "</code></pre>";
     document.getElementById('ProcAsmListing').innerHTML = xs;
 }
 
