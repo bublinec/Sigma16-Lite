@@ -284,6 +284,10 @@ function assembler (comments=true) {
     m.asmListingPlain.push("</pre>");
     m.asmListingDec.push("</pre>");
     setAsmListing (m);
+    console.log(m);
+    console.log("**************************************************");
+    
+    
 }
 
 //----------------------------------------------------------------------

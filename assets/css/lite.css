@@ -372,11 +372,6 @@ input[type=color]:focus{
     outline: none;
 }
 
-/* Editor */
-textarea:focus{
-    outline: none;
-}
-
 /* Code coloring */
 :root{
     --comments: #024d15; 
@@ -432,4 +427,13 @@ textarea:focus{
 pre{
     padding: 5px 0 25px 5px !important;
     margin-top: 0;
+}
+
+/* Editor */
+.Editor:focus{
+    outline-color: var(--main);
+}
+
+.Editor{
+    /* padding: 5px; */
 }

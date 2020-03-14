@@ -12,6 +12,7 @@
     <script src="assets/js/linker.js"> </script>
     <script src="assets/js/emulator.js"> </script>
 	<script src="assets/js/gui.js"> </script>
+	<script src="assets/js/colorizer.js"> </script>
 	<link rel="stylesheet" href="assets/css/gui.css" type="text/css">
 	<link rel="stylesheet" href="assets/css/lite.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"> 
@@ -21,7 +22,7 @@
   <body>
   <div class="FullFrame">
 
-	<!-- DialoguePopup???-->
+	<!-- DialoguePopup - breakpoints-->
 	<div class="DialoguePopup" id="BreakDialogue">
 		<div class="PaneButtons">
 			<button onclick="breakRefresh(emulatorState)">Refresh</button>
@@ -51,8 +52,12 @@
 			</div>
 			<!-- EDITOR BODY -->
 			<div class="PaneBody" id="EditorBody">
-				<textarea class="Editor" spellcheck="false" id="EditorTextArea">
-				</textarea>
+				<!-- <textarea class="Editor" spellcheck="false" id="EditorTextArea"></textarea> -->
+				<div class="Editor" spellcheck="false" id="EditorTextArea" contenteditable>
+					<!-- <div id="AsmTextHtml"></div> -->
+
+				</div>
+			
 			</div>
 			</div>
 
