@@ -91,7 +91,7 @@
                            [RegVlineRValStart] 37px
                            [RegVlineEnd];
 }
-
+/* Register colors */
 .Registers div:nth-child(4n){
     background-color: var(--light) ;
 }
@@ -101,12 +101,18 @@
 }
 
 .NewRegSecName{
+    background-color: var(--main);
     width: 70px;
 }
 
-.NewRegSecName{
-    background-color: var(--main);
+.RegisterName{
+    height: 16.4px !important;
 }
+
+.RegisterValue{
+    height: 16.4px !important;
+}
+
 
 #MemSection{
     height: 280px;
@@ -127,7 +133,7 @@
 #IOSection{
     background-color: var(--main); 
     min-width: 20px;
-    width: calc(100% - 300px) !important;
+    width: calc(100% - 296px) !important;
     height: 280px !important;
     display: block !important;
 }
@@ -154,12 +160,11 @@
     background-color: var(--background) !important;
 }
 
-
-
 #ProcAsmListing{
-    max-height: calc(55vh -10px);
+    max-height: calc(55vh - 10px);
+    /* FOr the Firefox displaying bug - changed in the boot function */
+    display:none;
 }
-
 
 #nInstrExecuted{
     font-size: 20px;
@@ -213,7 +218,7 @@ button:hover {
 
 .navbar button{
     font-size: 1rem;
-    padding: 4px 10px 7px 10px;
+    padding: 4px 3% 7px 3%;
     height: 40px;
 }
 
@@ -328,17 +333,18 @@ input[type=text]{
 input[type=color]{
     float: right;
     padding: 9px;
-	width: 25px;
-	height: 25px;
+    padding-right: 12px;
+	width: 23px;
+	height: 23px;
 	border: none;
-	border-radius: 25px;
+	border-radius: 23px;
 	background: none;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
-	border-radius: 25px;
+	border-radius: 23px;
 }
 
 input[type=color]:focus{

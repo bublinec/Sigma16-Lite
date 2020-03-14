@@ -137,6 +137,7 @@ function boot(es) {
 
     // ASSEMBLE
     assembler()
+    document.querySelector("#ProcAsmListing").style.display = "block";
 
 
     console.log ('boot');
@@ -412,6 +413,7 @@ function setProcStatus (es,s) {
 
 function procReset(es) {
     console.log ("reset the processor");
+    document.querySelector("#ProcAsmListing").style.display = "none";
     setProcStatus (es,"Reset");
     resetRegisters ();
     refreshRegisters ();
