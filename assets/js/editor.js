@@ -21,7 +21,7 @@
 function editorDownload () {
     console.log ("editorPrepareDownload");
     let downloadElt = document.getElementById("editorDownloadAnchor");
-    let edText = editorBufferTextArea.value;
+    let edText = editorBufferTextArea.textContent;
     downloadElt.href = makeTextFile(edText);  // provide text to download
     var file_name_input = document.querySelector("#file_name").value;
     if(file_name_input == ""){
@@ -44,7 +44,7 @@ function leaveEditor () {
     if (m) {
         let oldSrc = m.modSrc;
         let oldSrcCanonical = oldSrc.replace (/\r\n/gm, '\n');
-        let newSrc = document.getElementById("EditorTextArea").value;
+        let newSrc = document.getElementById("EditorTextArea").textContent;
         let newSrcCanonical = newSrc.replace (/\r\n/gm, '\n');
         if (m.mFile && (oldSrcCanonical != newSrcCanonical)) {
             m.fileStale = true;

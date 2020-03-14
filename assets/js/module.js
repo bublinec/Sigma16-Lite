@@ -250,7 +250,7 @@ function refreshModulesList() {
 function refreshEditorBuffer () {
     console.log (`refreshEditorBuffer selectedModule=${selectedModule}`);
     let m = s16modules[selectedModule];
-    document.getElementById("EditorTextArea").value = m.modSrc;
+    // document.getElementById("EditorTextArea").textContent = m.modSrc;
     document.getElementById("AsmTextHtml").innerHTML = "";
 }
 

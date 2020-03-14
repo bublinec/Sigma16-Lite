@@ -657,9 +657,9 @@ function showCC (c) {
 
 function tryMainFcn () {
     if (typeof testDefInMain === 'function') {
-	document.getElementById('EditorTextArea').value =
+	document.getElementById('EditorTextArea').textContent =
 	    "tryMainFcn: testDefInMain exists " + testDefInMain (41);
     } else {
-	document.getElementById('EditorTextArea').value = "tryMainFcn NO";
+	document.getElementById('EditorTextArea').textContent = "tryMainFcn NO";
     }
 }

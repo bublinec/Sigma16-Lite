@@ -229,7 +229,7 @@ function copyExampleToClipboard () {
 //-------------------------------------------------------------------------------
 
 function editorClear () {
-    document.getElementById('EditorTextArea').value = "";
+    document.getElementById('EditorTextArea').textContent = "";
 }
 
 //-------------------------------------------------------------------------------
@@ -509,7 +509,7 @@ function userman_pane_button() {
 
 function insert_example(exampleText) {
     console.log('Inserting example add into editor text');
-    document.getElementById('EditorTextArea').value = exampleText;
+    document.getElementById('EditorTextArea').textContent = exampleText;
 };
 
 const example_hello_world =

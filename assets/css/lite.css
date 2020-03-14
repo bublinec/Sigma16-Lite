@@ -129,6 +129,7 @@
 .MemDisplay{
     height: 100%;
     max-height: 280px;
+    overflow: auto;
 }
 
 .CPU_box{
@@ -170,7 +171,7 @@
     max-height: calc(55vh - 10px);
     /* FOr the Firefox displaying bug - changed in the boot function */
     display:none;
-    margin-top: 1px;
+    margin: 1px 0 0 3px;
 }
 
 #nInstrExecuted{
@@ -228,7 +229,8 @@ button:hover {
     font-size: 1rem;
     padding: 4px 3% 3px 3%;
     height: 40px;
-    border-bottom: solid 4px;
+    border-bottom: solid 3px;
+    /* border-right: solid 2px black; */
     border-bottom-color:  var(--gray);
 }
 
@@ -236,6 +238,11 @@ button:hover {
     padding: 0px 0px 0px 0px;
     height: 40px;
     border: none;
+
+}
+
+#ProcessorPane{
+    border-left: solid 2px black;
 }
 
 #ProcessorPane .PaneButtons button{
@@ -329,10 +336,12 @@ input[type=text]{
 #AssemblerPane .HighlightedTextAsHtml{
     overflow-y: initial;
     height: calc(100% - 52px);
+    padding: 5px 0 25px 5px !important;
+    margin-top: 0;
 }
 
 #AssemblerPane pre{
-    overflow-y: scroll !important;
+    overflow-y: auto !important;
 }
 /* Also for the processor pane */
 .HighlightedTextAsHtml{
@@ -424,16 +433,15 @@ input[type=color]:focus{
     font-weight: bold;
 }
 
-pre{
-    padding: 5px 0 25px 5px !important;
-    margin-top: 0;
-}
 
 /* Editor */
 .Editor:focus{
     outline-color: var(--main);
 }
 
-.Editor{
-    /* padding: 5px; */
+#EditorBody iframe{
+    width: 100%;
+    height: 100%;
 }
+
+
