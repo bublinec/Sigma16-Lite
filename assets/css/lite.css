@@ -25,6 +25,8 @@
 .navbar{
     height: 40px;
     border-bottom: solid 2px black;
+    /* beacuse of the loading - set in gui onload() */
+    display: none; 
 }
 
 .MidMainRight{

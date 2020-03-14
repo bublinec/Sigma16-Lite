@@ -613,6 +613,8 @@ window.onload = function () {
 
     showTabbedPane("EditorPane");
     showTabbedPane("ProcessorPane")
+    document.querySelector(".navbar").style.display = "block"; // because of the loading
+
     initializeProcessorElements ();  // so far, it's just instr decode
     clearInstrDecode (emulatorState);
     
