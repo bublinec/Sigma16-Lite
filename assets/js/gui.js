@@ -1,21 +1,7 @@
-// Sigma16: gui.js
-// Copyright (c) 2019 John T. O'Donnell.  john.t.odonnell9@gmail.com
-// License: GNU GPL Version 3 or later. Sigma16/ LICENSE.txt COPYRIGHT.txt
+// Sigma16-lite 
 
-// This file is part of Sigma16.  Sigma16 is free software: you can
-// redistribute it and/or modify it under the terms of the GNU General
-// Public License as published by the Free Software Foundation, either
-// version 3 of the License, or (at your option) any later version.
-// Sigma16 is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.  You should have received
-// a copy of the GNU General Public License along with Sigma16.  If
-// not, see <https://www.gnu.org/licenses/>.
+// MAIN GUI JS
 
-//-------------------------------------------------------------------------------
-// gui.js is the main program.  It's launched by Sigma16.html and is
-// the last JavaScript file to be loaded
 
 //-------------------------------------------------------------------------------
 // Parameters
@@ -27,9 +13,6 @@
 // height of the listing in pixels and divide by the number of lines
 // in the listing.  Some other geometric parameters are also obtained,
 // but aren't currently used.
-
-
-
 
 
 function getListingDims (es) {
@@ -450,7 +433,7 @@ function hideAllTabbedPanes() {
 }
 
 function showTabbedPane(paneId) {
-   console.log("showing tabbed pane " + paneId);
+    console.log("showing tabbed pane " + paneId);
     hideAllTabbedPanes();
     document.getElementById(paneId).style.display = "block";
     console.log("Now on tabbed pane " + paneId);
@@ -532,8 +515,10 @@ const example_hello_world =
      trap   R0,R0,R0       ; halt
 
 ; How to run the program:
-;   (1) Translate to machine language: Assembler tab, click Assemble
-;   (2) Run it: Processor tab, Boot, click Step for each instruction
+;   (1) Click Assemble and Boot - circle-arrow button in the processor tab
+;   (2) Run it - click Run button or Step for each instruction
+;   (3) Have Fun!
+
 
 ; When the program halts, we should see the following:
 ;   R1 contains  6 (0006)
@@ -594,8 +579,15 @@ function foobarSaveAs () {
 }
 
 
+//-------------------------------------------------------------------------------
+// Lite functions
+//-------------------------------------------------------------------------------
 
-
+function changeColor () {
+    var color_input = document.querySelector("input[type=color]")
+    var new_color = color_input.value
+    document.querySelector("body").style.setProperty('--main', new_color);
+}
 
 
 
@@ -611,9 +603,12 @@ window.onload = function () {
 
     initModules();
 
+    // From lite 
+    // *********************
     showTabbedPane("EditorPane");
     showTabbedPane("ProcessorPane")
     document.querySelector(".navbar").style.display = "block"; // because of the loading
+    // *********************
 
     initializeProcessorElements ();  // so far, it's just instr decode
     clearInstrDecode (emulatorState);

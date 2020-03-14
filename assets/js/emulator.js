@@ -164,7 +164,6 @@ function boot(es) {
         getListingDims(es);
     } else {
         showTabbedPane("AssemblerPane")
-        document.getElementById("ProcAsmListing").innerHTML = "ERROR\n(se assembler)";
 	    console.log ('cannot boot')
     }
 
