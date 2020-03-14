@@ -1,7 +1,6 @@
 // Sigma16-lite 
 
-// MAIN GUI JS
-
+// MAIN GUI JS file
 
 //-------------------------------------------------------------------------------
 // Parameters
@@ -422,6 +421,11 @@ function hideTabbedPane(paneId) {
 }
 
 function hideAllTabbedPanes() {
+    var buttons = document.querySelectorAll(".navbar button")
+    for(var i = 0; i<buttons.length; i++){
+        buttons[i].style.borderBottomColor = "var(--gray)";
+    }
+
     hideTabbedPane("WelcomePane");
     hideTabbedPane("ExamplesPane");
     hideTabbedPane("ModulesPane");
@@ -440,14 +444,18 @@ function showTabbedPane(paneId) {
 }
 
 function welcome_pane_button() {
-//    console.log("welcome_pane_button clicked")
+    console.log("welcome_pane_button clicked")
     hideAllTabbedPanes();
     showTabbedPane("WelcomePane");
+
+    // Border on buttons
+    document.querySelectorAll(".navbar button")[2].style.borderBottomColor = "var(--main)";
 }
 
 function examples_pane_button() {
     hideAllTabbedPanes();
     showTabbedPane("ExamplesPane");
+    document.querySelectorAll(".navbar button")[3].style.borderBottomColor = "var(--main)";
 }
 
 function modules_pane_button() {
@@ -468,6 +476,7 @@ function assembler_pane_button() {
     hideAllTabbedPanes();
     showTabbedPane("AssemblerPane");
     assembler()
+    document.querySelectorAll(".navbar button")[1].style.borderBottomColor = "var(--main)";
 }
 
 function linker_pane_button() {
@@ -480,6 +489,7 @@ function processor_pane_button() {
    console.log("processor_pane button clicked")
     hideAllTabbedPanes();
     showTabbedPane("ProcessorPane");
+    document.querySelectorAll(".navbar button")[0].style.borderBottomColor = "var(--main)";
 }
 
 function test_pane_button() {
@@ -606,7 +616,8 @@ window.onload = function () {
     // From lite 
     // *********************
     showTabbedPane("EditorPane");
-    showTabbedPane("ProcessorPane")
+    showTabbedPane("ProcessorPane");
+    document.querySelectorAll(".navbar button")[0].style.borderBottomColor = "var(--main)";
     document.querySelector(".navbar").style.display = "block"; // because of the loading
     // *********************
 

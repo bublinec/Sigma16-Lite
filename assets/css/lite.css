@@ -220,13 +220,16 @@ button:hover {
 /* Right */
 .MidMainRight button:hover{
     background-color: var(--background);
+    border-bottom-color: var(--background) !important;
     color: var(--main);
 }
 
 .navbar button{
     font-size: 1rem;
-    padding: 4px 3% 7px 3%;
+    padding: 4px 3% 3px 3%;
     height: 40px;
+    border-bottom: solid 4px;
+    border-bottom-color:  var(--gray);
 }
 
 #ProcessorPane .PaneButtons {
