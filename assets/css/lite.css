@@ -31,6 +31,10 @@
     width: 300px !important;
 }
 
+.MidMainLeft{
+    max-width: calc(100% - 385px) !important;
+}
+
 .Pane{
     background-color: var(--gray);
     max-width: 100% !important;
@@ -164,6 +168,7 @@
     max-height: calc(55vh - 10px);
     /* FOr the Firefox displaying bug - changed in the boot function */
     display:none;
+    margin-top: 1px;
 }
 
 #nInstrExecuted{
