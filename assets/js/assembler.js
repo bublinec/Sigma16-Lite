@@ -841,7 +841,7 @@ function ensure (operand_field) {
 //----------------------------------------------------------------------
 
 function asmPass1 (m) {
-    let asmSrcLines = document.querySelector("iframe").contentWindow.document.querySelector(".highLite_colors").textContent.split('\n');
+    let asmSrcLines = document.querySelector(".highLite_colors").textContent.split('\n');
     console.log('assembler pass 1: ' + asmSrcLines.length + ' source lines');
     for (let i = 0; i < asmSrcLines.length; i++) {
 	m.asmStmt[i] = mkAsmStmt (i, m.locationCounter, asmSrcLines[i]);
