@@ -31,3 +31,28 @@ editor.addEventListener("input", highLite.bind(null, editor));
 editor.addEventListener("input", highLite.bind(null, editor));
 highLite(editor); 
 
+
+// KEYBOARD SHORTCUTS:
+
+// TAB - prevent from leaving editor, insert spaces instead
+editor.addEventListener("keydown", function onKeyDown(e) {
+  if (e.keyCode === 9) { // tab key
+      e.preventDefault();  // this will prevent us from tabbing out of the editor
+
+      // now insert four non-breaking spaces for the tab key
+      var doc = editor.ownerDocument.defaultView;
+      var sel = doc.getSelection();
+      var range = sel.getRangeAt(0);
+
+      var tabNode = document.createTextNode("\u00a0\u00a0\u00a0\u00a0");
+      range.insertNode(tabNode);
+
+      range.setStartAfter(tabNode);
+      range.setEndAfter(tabNode); 
+      sel.removeAllRanges();
+      sel.addRange(range);
+
+      // higlite when spaces inserted
+      highLite(editor); 
+  }
+})
