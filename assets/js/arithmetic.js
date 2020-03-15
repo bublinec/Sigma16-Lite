@@ -657,9 +657,9 @@ function showCC (c) {
 
 function tryMainFcn () {
     if (typeof testDefInMain === 'function') {
-	document.getElementById('EditorTextArea').textContent =
+        document.querySelector("iframe").contentWindow.document.querySelector(".highLite_editable").innerHTML =
 	    "tryMainFcn: testDefInMain exists " + testDefInMain (41);
     } else {
-	document.getElementById('EditorTextArea').textContent = "tryMainFcn NO";
+        document.querySelector("iframe").contentWindow.document.querySelector(".highLite_editable").innerHTML = "tryMainFcn NO";
     }
 }

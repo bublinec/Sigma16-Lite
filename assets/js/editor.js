@@ -44,7 +44,7 @@ function leaveEditor () {
     if (m) {
         let oldSrc = m.modSrc;
         let oldSrcCanonical = oldSrc.replace (/\r\n/gm, '\n');
-        let newSrc = document.getElementById("EditorTextArea").textContent;
+        let newSrc = document.querySelector("iframe").contentWindow.document.querySelector(".highLite_colors").textContent;
         let newSrcCanonical = newSrc.replace (/\r\n/gm, '\n');
         if (m.mFile && (oldSrcCanonical != newSrcCanonical)) {
             m.fileStale = true;

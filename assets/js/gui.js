@@ -229,7 +229,9 @@ function copyExampleToClipboard () {
 //-------------------------------------------------------------------------------
 
 function editorClear () {
-    document.getElementById('EditorTextArea').textContent = "";
+    document.querySelector("iframe").contentWindow.document.querySelector(".highLite_colors").textContent = "";
+    document.querySelector("iframe").contentWindow.document.querySelector(".highLite_editable").textContent = "";
+
 }
 
 //-------------------------------------------------------------------------------
@@ -509,7 +511,9 @@ function userman_pane_button() {
 
 function insert_example(exampleText) {
     console.log('Inserting example add into editor text');
-    document.getElementById('EditorTextArea').textContent = exampleText;
+    document.querySelector("iframe").contentWindow.document.querySelector(".highLite_colors").innerHTML = exampleText;
+    document.querySelector("iframe").contentWindow.document.querySelector(".highLite_editable").innerHTML = exampleText;
+    
 };
 
 const example_hello_world =
@@ -700,7 +704,7 @@ window.onload = function () {
     memInitialize();
     procAsmListingElt = document.getElementById('ProcAsmListing');
     
-    editorBufferTextArea = document.getElementById("EditorTextArea");
+    editorBufferTextArea = document.querySelector("iframe").contentWindow.document.querySelector(".highLite_colors");
     
     resetRegisters();
     initialize_mid_main_resizing ();
