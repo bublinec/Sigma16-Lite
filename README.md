@@ -1,5 +1,5 @@
-# Sigma16-lite
-#### https://bublinec.github.io/Sigma16-Lite
+# Sigma16-corona
+#### https://bublinec.github.io/Sigma16-corona
 
 Hi There!
 This is my *unofficial* version of Sigma16.
