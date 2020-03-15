@@ -37,6 +37,42 @@ editor.addEventListener("input", highLite.bind(null, editor));
 highLite(editor); 
 
 
+//-------------------------------------------------------------------------------
+// Other:
+//-------------------------------------------------------------------------------
+
+// Color adjust -website form input
+function changeColor () {
+  var color_input = document.querySelector("input[type=color]")
+  var new_color = color_input.value
+  document.querySelector("body").style.setProperty('--main', new_color);    
+}
+
+
+// Load local file
+function readSingleFile(e) {
+  var file = e.target.files[0];
+  if (!file) {
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var contents = e.target.result;
+    displayContents(contents);
+  };
+  reader.readAsText(file);
+}
+
+function displayContents(contents) {
+  document.querySelector(".highLite_colors").textContent = contents;
+  document.querySelector(".highLite_editable").textContent = contents;
+  highLite(editor);
+  var filename = document.querySelector("#file_input").value.split(/(\\|\/)/g).pop().split('.')[0];
+  document.querySelector("#file_name").value = filename;
+}
+
+document.getElementById('file_input').addEventListener('change', readSingleFile, false);
+
 
 //-------------------------------------------------------------------------------
 // KEYBOARD SHORTCUTS - using shortcut library (mostly):
@@ -110,14 +146,7 @@ shortcut.add("Ctrl+Q",function() {
   examples_pane_button()
 });
 
-
-//-------------------------------------------------------------------------------
-// Other:
-//-------------------------------------------------------------------------------
-
-// Color adjust -website form input
-function changeColor () {
-  var color_input = document.querySelector("input[type=color]")
-  var new_color = color_input.value
-  document.querySelector("body").style.setProperty('--main', new_color);    
-}
+// Open file
+shortcut.add("Ctrl+O",function() {
+  document.querySelector("#file_input").click()
+});

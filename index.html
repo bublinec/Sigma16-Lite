@@ -44,8 +44,11 @@
 				<div class="PaneButtons">
 					<div id="logo"><a href="index.html">Sigma16</a></div>
 					<input id="file_name" type="text" placeholder="File name">
-					<button title="Save" onclick="editorDownload()"><i class="fas fa-download"></i>
+					<button title="Save File (Ctrl+R)" onclick="editorDownload()"><i class="fas fa-download"></i>
 						<a download="this.txt" id="editorDownloadAnchor" style="display: none"></a>
+					</button>
+					<button title="Open File (Ctrl+O)" onclick="document.querySelector('#file_input').click()">
+						<i class="fas fa-upload"><input type="file" id="file_input"></i>
 					</button>
 					<button title="Clear" onclick="editorClear()"><i class="fas fa-trash"></i></button>
 					<button title="Hello World!" onclick="insert_example(example_hello_world);"><i class="far fa-file-code"></i></button>
@@ -122,8 +125,8 @@
 			<div class="navbar">
 				<button onclick="processor_pane_button()"> CPU </button>
 				<button onclick="assembler_pane_button()"> Assembler </button>
-				<button onclick="	"> Guide </button>
-				<button onclick="examples_pane_button()"> Examples </button>
+				<button title="(Ctrl+G)" onclick="welcome_pane_button()"> Guide </button>
+				<button title="(Ctrl+Q)" onclick="examples_pane_button()"> Examples </button>
 				<input title="Adjust Color" onchange="changeColor()" type="color" value="#e24042">
 			</div>
 
@@ -132,16 +135,16 @@
 			<!-- PROCESSOR PANE -->
 			<div class="Pane" id="ProcessorPane">
 				<div class="PaneButtons">
-					<button title="Assemble and Boot" onclick="boot(emulatorState)"><i class="fas fa-arrow-alt-circle-right"></i></button>
+					<button title="Assemble and Boot (Ctrl+B)" onclick="boot(emulatorState)"><i class="fas fa-arrow-alt-circle-right"></i></button>
 					<button title="Reset" onclick="procReset(emulatorState)"> <i class="fas fa-times-circle"></i></i> </button>
-					<button title="Step" onclick="procStep(emulatorState)"> <i class="fas fa-step-forward"></i> </button>
-					<button title="Run" onclick="procRun(emulatorState)"> <i class="fas fa-play"></i> </button>
-					<button title="Pause" onclick="procPause(emulatorState)"><i class="fas fa-pause"></i></button>
+					<button title="Step (Ctrl+E)" onclick="procStep(emulatorState)"> <i class="fas fa-step-forward"></i> </button>
+					<button title="Run (Ctrl+R)" onclick="procRun(emulatorState)"> <i class="fas fa-play"></i> </button>
+					<button title="Pause (Ctrl+P)" onclick="procPause(emulatorState)"><i class="fas fa-pause"></i></button>
 					<!-- <button onclick="procInterrupt(emulatorState)">Interrupt</button> -->
 					<!-- <button onclick="procBreakpoint(emulatorState)">Breakpoint</button> -->					
 					<!-- RESIZING MidRight -->
-					<button title="Resize" class="RightButton" onclick="user_guide_resize(20)"><i class="fas fa-arrow-right"></i></button>
-					<button title="Resize" class="RightButton" onclick="user_guide_resize(-20)"><i class="fas fa-arrow-left"></i></button>
+					<button title="Move Right (Ctrl+Right)" class="RightButton" onclick="user_guide_resize(20)"><i class="fas fa-arrow-right"></i></button>
+					<button title="Move Left (Ctrl+Left)" class="RightButton" onclick="user_guide_resize(-20)"><i class="fas fa-arrow-left"></i></button>
 				</div>
 				<div class="PaneBody" id="ProcessorBody">
 					<div id="ProcessorState">
