@@ -1,6 +1,5 @@
 :root{
-    --main: #e2484a;
-    /* --main: #259fad; */
+    --main: rgb(226, 72, 74);
     --background:rgb(190, 211, 208);
     --darker: hsl(220, 16%, 16%);
     --dark: hsl(220, 16%, 14%);
@@ -27,6 +26,16 @@
     box-sizing: boder-box;
     overflow-y: scroll;
 } 
+
+/* Selection */
+::selection {
+    background: rgba(226, 72, 75, 0.24); /* WebKit/Blink Browsers */
+    border-radius: 2px;
+  }
+
+::-moz-selection {
+    background: rgba(226, 72, 75, 0.24); /* WebKit/Blink Browsers */
+}
 
 #editor {
     display: flex;
