@@ -131,7 +131,7 @@ function selectExample() {
     m.modSrc = ys;
     refreshEditorBuffer();
     refreshModulesList();
-    highLite(ediotr);
+    highLite(editor);
 
 }
 

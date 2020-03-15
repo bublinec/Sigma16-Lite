@@ -710,7 +710,7 @@ window.onload = function () {
     ;  - file loading, saving
     
     ; And many other features! So go ahead and load your assessed excercise!
-    ; (or click <i class="far fa-file-code"></i></button> to in the navbar to insert Hello World)
+    ; (or click <i class="far fa-file-code"></i></button> in the navbar to insert Hello World)
                 
                   THIS VERSION DOESN'T SUPPORT MOZILLA FIREFOX
     `;
