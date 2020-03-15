@@ -1,18 +1,161 @@
 :root{
-    --main: #e24042;
+    --main: #e2484a;
     /* --main: #259fad; */
-    --background:rgb(225, 230, 229);
-    --gray: #222222;
+    --background:rgb(190, 211, 208);
+    --darker: hsl(220, 16%, 16%);
+    --dark: hsl(220, 16%, 14%);
     --light: #ebcbcb;
 
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
     --frameVBorderThickness: 0;
-    --full-frame-background-color: #222222;
-    --mid-main-right-background-color: #222222;
+    --full-frame-background-color: var(--dark);
+    --mid-main-right-background-color: var(--dark);
     --paneButtonsHeight: 0;
     --paneSecPadding: 0;
 }
+
+/**********/
+/* Editor */
+/**********/
+
+#EditorBody{
+    font: 14px/1.4 sans-serif;
+    background: var(--darker);
+    color: var(--main);
+    padding: 20px var(--background);
+    box-sizing: boder-box;
+    overflow-y: auto;
+} 
+
+#editor {
+    display: flex;
+}
+
+
+.highLite {
+    position: relative;
+    background: var(--darker);
+}
+
+.highLite_colors,
+.highLite_editable {
+    padding: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    white-space: pre-wrap;
+    /* display: inline-block; */
+    font-family: monospace;
+    font-size: 15px;
+    display: inline-block;
+    white-space: pre;
+}
+
+/* THE OVERLAYING CONTENTEDITABLE WITH TRANSPARENT TEXT */
+.highLite_editable {
+    position: relative;
+    -webkit-text-fill-color: transparent; /* Chrome: make text transparent */
+    color: hsl(0, 5%, 76%); /* But keep caret colored */
+    height: 100%;
+
+}
+.highLite_editable:focus {
+    outline: none;
+}
+
+/* THE UNDERLAYING ONE WITH HIGHLIGHT COLORS */
+.highLite_colors {
+    position: absolute;
+    user-select: none;
+}
+
+.highLite_colors i {
+    font-style: normal;
+}
+
+/* JS */
+i.js_quot { color: hsl( 50, 75%, 70%); }
+i.js_coma { color: hsl(200, 64%, 61%); }
+i.js_rx { color: hsl(300, 75%, 70%); }
+i.js_rrr { color: hsl(210, 75%, 70%); }
+i.js_squa { color: hsl(230, 75%, 70%); }
+i.js_data { color: hsl(250, 47%, 73%); }
+i.js_numb { color: hsl(100, 75%, 70%); }
+i.js_logi { color: hsl(200, 75%, 70%); }
+i.js_reg { color: hsl(200, 75%, 70%); }
+i.js_comm { color: hsl(200, 10%, 45%); font-style: italic; }
+i.js_comm > * { color: inherit; }
+
+
+/* ******************************** */
+/*          Asembler code            */
+/* ******************************** */
+
+.HighlightedTextAsHtml{
+    /* font: 14px/1.4 sans-serif; */
+    overflow-y: initial;
+}
+
+.ListingHeader{
+    color: var(--header);
+    font-weight: 900;
+}
+
+
+:root{
+    --comments:  #07360f; 
+    --commands: #b60202;
+    --arguments: #12055f;
+    --header: #530439;
+    --text-color-err: red;
+}
+
+
+.FIELDCOMMENT{
+    color: var(--comments); 
+    font-style: italic;
+}
+
+.FIELDOPERATION{
+    font-weight: 900;
+    color: var(--commands);
+}
+
+.FIELDOPERAND{
+    color: var(--arguments);
+    font-weight: 800;
+}
+
+.ERR{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.CUR{
+    font-weight: bold;
+    color: var(--text-color-err);
+}
+
+.NEXT{
+    color:black;
+}
+
+.FIELDLABEL{
+    font-weight: bold;
+    color: orangered;
+}
+
+.GET{
+    color: var(--commands);
+    font-weight: bold;
+}
+
+
+/***********/
+/* Old CSS */
+/***********/
 
 .MiddleSection{
     height: 99%;
@@ -38,7 +181,7 @@
 }
 
 .Pane{
-    background-color: var(--gray);
+    background-color: var(--dark);
     max-width: 100% !important;
     /* change onload (in gui.js) */
     display: none; 
@@ -50,13 +193,13 @@
 }
 
 .PaneBody{
-    background-color: var(--gray);
+    background-color: var(--dark);
     height: 100%;
 }
 
 .PaneButtons{
     height: 40px;
-    background-color: var(--gray);
+    background-color: var(--dark);
     border-bottom: solid 2px black;
 }
 
@@ -74,7 +217,7 @@
 
 #ProcessorState{
     display: block;
-    background-color: var(--gray);
+    background-color: var(--dark);
 }
 
 .ProcStateSection{
@@ -152,7 +295,7 @@
     margin-bottom: 3px;
     background-color: var(--background) !important;
     height: 40px;
-    border-color: var(--gray) ;
+    border-color: var(--dark) ;
     border-radius: 3px;
 }
 
@@ -162,7 +305,7 @@
 }
 
 .IOlog{
-    border: solid 1px var(--gray) !important;
+    border: solid 1px var(--dark) !important;
     border-radius: 3px;
     background-color: var(--background) !important;
 }
@@ -172,6 +315,7 @@
     /* FOr the Firefox displaying bug - changed in the boot function */
     display:none;
     margin: 1px 0 0 3px;
+    padding-left: 10px;
 }
 
 #nInstrExecuted{
@@ -221,8 +365,8 @@ button:hover {
 /* Right */
 .MidMainRight button:hover{
     background-color: var(--background);
-    border-bottom-color: var(--background) !important;
-    color: var(--main);
+    border-bottom-color: var(--main) !important;
+    color: var(--dark);
 }
 
 .navbar button{
@@ -231,7 +375,7 @@ button:hover {
     height: 40px;
     border-bottom: solid 3px;
     /* border-right: solid 2px black; */
-    border-bottom-color:  var(--gray);
+    border-bottom-color: var(--dark);
 }
 
 #ProcessorPane .PaneButtons {
@@ -258,12 +402,12 @@ button:hover {
 
 /* #ProcessorPane .PaneButtons button:hover{
     font-size:  1.5rem;
-    background-color: var(--gray);
+    background-color: var(--dark);
     color: var(--main);
 } */
 
 /* .RightButton:hover{
-    background-color: var(--gray) !important;
+    background-color: var(--dark) !important;
     color: var(--main) !important;
 } */
 
@@ -317,13 +461,13 @@ input[type=text]{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px var(--gray); 
+    box-shadow: inset 0 0 3px var(--dark); 
     border-radius: 3px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--gray); 
+    background: var(--dark); 
     border-radius: 4px;
   }
   
@@ -337,15 +481,10 @@ input[type=text]{
     overflow-y: initial;
     height: calc(100% - 52px);
     padding: 5px 0 25px 5px !important;
-    margin-top: 0;
 }
 
 #AssemblerPane pre{
     overflow-y: auto !important;
-}
-/* Also for the processor pane */
-.HighlightedTextAsHtml{
-    overflow-y: initial;
 }
 
 /* Color input */
@@ -381,67 +520,9 @@ input[type=color]:focus{
     outline: none;
 }
 
-/* Code coloring */
-:root{
-    --comments: #024d15; 
-    --commands: #b60202;
-    --arguments: #12055f;
-    --header: #530439;
-    --text-color-err: red;
-}
-
-.ListingHeader{
-    color: var(--header);
-    font-weight: 900;
-}
-
-.FIELDCOMMENT{
-    color: var(--comments);
-}
-
-.FIELDOPERATION{
-    color: var(--commands);
-    font-weight: 900;
-}
-
-.FIELDOPERAND{
-    color: var(--arguments);
-    font-weight: 800;
-}
-
-.ERR{
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.CUR{
-    font-weight: bold;
-    color: var(--text-color-err);
-}
-
-.NEXT{
-    color:black;
-}
-
-.FIELDLABEL{
-    font-weight: bold;
-    color: orangered;
-}
-
-.GET{
-    color: var(--commands);
-    font-weight: bold;
-}
 
 
-/* Editor */
-.Editor:focus{
-    outline-color: var(--main);
-}
 
-#EditorBody iframe{
-    width: 100%;
-    height: 100%;
-}
+
 
 

@@ -30,3 +30,4 @@ editor.autocapitalize = "off";
 editor.addEventListener("input", highLite.bind(null, editor));
 editor.addEventListener("input", highLite.bind(null, editor));
 highLite(editor); 
+

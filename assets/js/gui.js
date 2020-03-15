@@ -425,7 +425,7 @@ function hideTabbedPane(paneId) {
 function hideAllTabbedPanes() {
     var buttons = document.querySelectorAll(".navbar button")
     for(var i = 0; i<buttons.length; i++){
-        buttons[i].style.borderBottomColor = "var(--gray)";
+        buttons[i].style.borderBottomColor = "var(--dark)";
     }
 
     hideTabbedPane("WelcomePane");
@@ -712,6 +712,7 @@ window.onload = function () {
     showSizeParameters();
     adjustToMidMainLRratio();
     initializeSubsystems ();
-    
+
+    insert_example(example_hello_world);
     console.log("Initialization complete");
 }

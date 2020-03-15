@@ -3,7 +3,7 @@
   --main: #259fad;
   --main: #e24042;
   --background:rgb(225, 230, 229);
-  --gray: #222222;
+  --gray: hsl(220, 16%, 14%);
   --light: #ebcbcb;
 }
 

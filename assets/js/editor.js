@@ -57,3 +57,4 @@ function leaveEditor () {
     }
     hideTabbedPane("EditorPane");
 }
+
