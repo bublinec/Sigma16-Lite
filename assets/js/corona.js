@@ -39,9 +39,8 @@ highLite(editor);
 
 
 //-------------------------------------------------------------------------------
-// KEYBOARD SHORTCUTS:
+// KEYBOARD SHORTCUTS - using shortcut library (mostly):
 //-------------------------------------------------------------------------------
-
 
 // TAB - prevent from leaving editor, insert spaces instead
 editor.addEventListener("keydown", function onKeyDown(e) {
@@ -66,6 +65,50 @@ editor.addEventListener("keydown", function onKeyDown(e) {
   }
 })
 
+// Save
+shortcut.add("Ctrl+S",function() {
+	editorDownload();
+});
+
+// Assemble and Boot
+shortcut.add("Ctrl+B",function() {
+	boot(emulatorState);
+});
+
+// Run
+shortcut.add("Ctrl+R",function() {
+  procRun(emulatorState);
+});
+
+// Step
+shortcut.add("Ctrl+E",function() {
+  procStep(emulatorState)
+});
+
+// Pause
+shortcut.add("Ctrl+P",function() {
+  procPause(emulatorState)
+});
+
+// Resize - right
+shortcut.add("Ctrl+right",function() {
+  user_guide_resize(20)
+});
+
+// Resize - left
+shortcut.add("Ctrl+left",function() {
+  user_guide_resize(-20)
+});
+
+// Guide
+shortcut.add("Ctrl+G",function() {
+  welcome_pane_button()
+});
+
+// Examples
+shortcut.add("Ctrl+Q",function() {
+  examples_pane_button()
+});
 
 
 //-------------------------------------------------------------------------------

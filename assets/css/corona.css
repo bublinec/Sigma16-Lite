@@ -45,21 +45,23 @@
 .highLite {
     position: relative;
     background: var(--darker);
+    width: 100%;
+    height: 100%;
 }
 
 .highLite_colors,
 .highLite_editable {
+    width: 100%;
+    height: 100%;
     padding: 25px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    white-space: pre-wrap;
-    /* display: inline-block; */
     font-family: monospace;
     font-size: 15px;
     display: inline-block;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 /* THE OVERLAYING CONTENTEDITABLE WITH TRANSPARENT TEXT */
