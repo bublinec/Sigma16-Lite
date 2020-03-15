@@ -27,6 +27,10 @@
     overflow-y: scroll;
 } 
 
+#editor {
+    display: flex;
+}
+
 /* Selection */
 ::selection {
     background: rgba(226, 72, 75, 0.24); /* WebKit/Blink Browsers */
@@ -35,10 +39,6 @@
 
 ::-moz-selection {
     background: rgba(226, 72, 75, 0.24); /* WebKit/Blink Browsers */
-}
-
-#editor {
-    display: flex;
 }
 
 
@@ -342,7 +342,7 @@ i.js_comm > * { color: inherit; }
 
 #ProcAsmListing{
     max-height: calc(55vh - 10px);
-    /* FOr the Firefox displaying bug - changed in the boot function */
+    /* For the Firefox displaying bug - changed in the boot function */
     display:none;
     margin: 1px 0 0 3px;
     padding-left: 10px;
@@ -355,7 +355,9 @@ i.js_comm > * { color: inherit; }
 }
 
 /* ************************************************************************ */
-/* ACTUAL CSS */
+/* NEW CSS */
+/* ************************************************************************ */
+
 body{
     font-family: 'Ubuntu', sans-serif !important;
 }
@@ -429,17 +431,6 @@ button:hover {
     font-size:  1.5rem;
     width: 40px;
 } 
-
-/* #ProcessorPane .PaneButtons button:hover{
-    font-size:  1.5rem;
-    background-color: var(--dark);
-    color: var(--main);
-} */
-
-/* .RightButton:hover{
-    background-color: var(--dark) !important;
-    color: var(--main) !important;
-} */
 
 /* Logo */
 #logo{

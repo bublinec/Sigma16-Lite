@@ -700,6 +700,21 @@ window.onload = function () {
     adjustToMidMainLRratio();
     initializeSubsystems ();
 
-    insert_example(example_hello_world);
+    const initial_message=
+    `; Hello Everyone,
+    ; My name is Juraj Bublinec and this is Sigma16-corona!
+    
+    ; This new version brings you:
+    ;  - this fancy GUI
+    ;  - keyboard shortcuts
+    ;  - file loading, saving
+    
+    ; And many other features! So go ahead and load your assessed excercise!
+    ; (or click <i class="far fa-file-code"></i></button> to in the navbar to insert Hello World)
+                
+                  THIS VERSION DOESN'T SUPPORT MOZILLA FIREFOX
+    `;
+
+    insert_example(initial_message);
     console.log("Initialization complete");
 }

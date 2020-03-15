@@ -88,7 +88,7 @@ editor.addEventListener("keydown", function onKeyDown(e) {
       var sel = doc.getSelection();
       var range = sel.getRangeAt(0);
 
-      var tabNode = document.createTextNode("\u00a0\u00a0\u00a0\u00a0");
+      var tabNode = document.createTextNode("    ");
       range.insertNode(tabNode);
 
       range.setStartAfter(tabNode);
@@ -100,6 +100,8 @@ editor.addEventListener("keydown", function onKeyDown(e) {
       highLite(editor); 
   }
 })
+
+
 
 // Save
 shortcut.add("Ctrl+S",function() {

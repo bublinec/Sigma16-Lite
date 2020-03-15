@@ -6,12 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Example programs for core architecturefoobar!</title>
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-      
-  </style>
+    :root{
+/* --main: #e24042; */
+--main: rgb(187, 36, 39);
+--background:rgb(190, 211, 208);
+--darker: hsl(220, 16%, 16%);
+--dark: hsl(220, 16%, 14%);
+--light: #c5c5c5;
+}
+    h1{font-size: 25px; text-align: center;}
+    body{color: var(--dark); background: var(--background); font-family: "Ubuntu";}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    html{background-color: var(--background);}
+    a{color: var(--main)}
+</style>
   <link rel="stylesheet" href="../../docs/src/example-indices/exampleindex.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
