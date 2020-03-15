@@ -4,7 +4,7 @@
     --background:rgb(190, 211, 208);
     --darker: hsl(220, 16%, 16%);
     --dark: hsl(220, 16%, 14%);
-    --light: #ebcbcb;
+    --light: #c5c5c5;
 
     --paneSecVskip: 0;
     --frameHBorderThickness: 0;
@@ -94,7 +94,6 @@ i.js_comm > * { color: inherit; }
 /* ******************************** */
 
 .HighlightedTextAsHtml{
-    /* font: 14px/1.4 sans-serif; */
     overflow-y: initial;
 }
 
