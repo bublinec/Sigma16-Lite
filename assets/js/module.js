@@ -132,7 +132,6 @@ function selectExample() {
     refreshEditorBuffer();
     refreshModulesList();
     highLite(editor);
-
 }
 
 

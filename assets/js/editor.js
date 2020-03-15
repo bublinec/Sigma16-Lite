@@ -27,7 +27,7 @@ function editorDownload () {
     if(file_name_input == ""){
         file_name_input = "My_program"
     }
-    downloadElt.setAttribute("download", file_name_input+".asm");
+    downloadElt.setAttribute("download", file_name_input+"asm.txt");
     downloadElt.click();  // perform the download
 }
 
