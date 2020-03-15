@@ -1,3 +1,8 @@
+
+//-------------------------------------------------------------------------------
+// Editor styling
+//-------------------------------------------------------------------------------
+
 const lang = {
   js: {
     comm: /(\;.*)/g,
@@ -12,7 +17,7 @@ const lang = {
 };
 
 const highLite = editor => {
-  const dataLang = editor.dataset.lang; // Detect "js", "html", "py", "bash", ...
+  const dataLang = editor.dataset.lang; 
   const langObj = lang[dataLang]; // Extract object from lang regexes dictionary
   let html = editor.innerHTML;
   Object.keys(langObj).forEach(function(key) {
@@ -32,7 +37,11 @@ editor.addEventListener("input", highLite.bind(null, editor));
 highLite(editor); 
 
 
+
+//-------------------------------------------------------------------------------
 // KEYBOARD SHORTCUTS:
+//-------------------------------------------------------------------------------
+
 
 // TAB - prevent from leaving editor, insert spaces instead
 editor.addEventListener("keydown", function onKeyDown(e) {
@@ -58,3 +67,14 @@ editor.addEventListener("keydown", function onKeyDown(e) {
 })
 
 
+
+//-------------------------------------------------------------------------------
+// Other:
+//-------------------------------------------------------------------------------
+
+// Color adjust -website form input
+function changeColor () {
+  var color_input = document.querySelector("input[type=color]")
+  var new_color = color_input.value
+  document.querySelector("body").style.setProperty('--main', new_color);    
+}
