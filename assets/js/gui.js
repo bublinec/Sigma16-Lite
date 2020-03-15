@@ -513,7 +513,7 @@ function insert_example(exampleText) {
     console.log('Inserting example add into editor text');
     document.querySelector(".highLite_colors").innerHTML = exampleText;
     document.querySelector(".highLite_editable").innerHTML = exampleText;
-    highLite(editor); 
+    highLite(editor);
 };
 
 const example_hello_world =
