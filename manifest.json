@@ -7,16 +7,7 @@
     "start_url": "https://bublinec.github.io/Sigma16-corona/",
     "short_name": "Sigma16",
     "theme_color": "transparent",
-    "description": "; Hello Everyone,
-    ; My name is Juraj Bublinec and this is Sigma16-corona!
-    
-    ; This new version brings you:
-    ;  - this fancy GUI
-    ;  - keyboard shortcuts
-    ;  - file loading, saving
-    
-    ; And many other features! So go ahead and load your assessed excercise!
-    ; (or click  in the navbar to insert Hello World)",
+    "description": "; Hello Everyone, ; My name is Juraj Bublinec and this is Sigma16-corona! ; This new version brings you: ;  - this fancy GUI ;  - keyboard shortcuts ;  - file loading, saving ; And many other features! So go ahead and load your assessed excercise! ; (or click  in the navbar to insert Hello World)",
     "orientation": "any",
     "background_color": "transparent",
     "related_applications": [],
