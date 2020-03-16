@@ -707,7 +707,7 @@ window.onload = function () {
     THIS IS A PROGRESSIVE WEB APP - YOU CAN INSTALL IT AND RUN OFFLINE!!
 
     ; This new version also brings you:
-    ;  
+     
     ;  - this fancy GUI
     ;  - keyboard shortcuts
     ;  - file loading, saving
@@ -723,7 +723,7 @@ window.onload = function () {
     // Fix install button color
     document.querySelector("pwa-install").setAttribute("style", "--install-button-color: black;");
     console.log(document.querySelector("pwa-install").getAttribute("style"));
-    console.log("been Here");
-    
+    editorBufferTextArea.focus()   
+
     console.log("Initialization complete");
 }
