@@ -15,7 +15,7 @@
     "icons": [  {
       "src": "coronavirus.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "512x512"
     }],
     "url": "https://bublinec.github.io/Sigma16-corona/",
     "screenshots": []
