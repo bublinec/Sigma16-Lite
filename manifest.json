@@ -12,8 +12,22 @@
     "background_color": "transparent",
     "related_applications": [],
     "prefer_related_applications": false,
-    "icons": { "16": "icon16.png",
-               "48": "icon48.png",   
-               "128": "icon128.png" },
+    "icons": [
+        {
+          "src": "icon128.png",
+          "sizes": "128x128",
+          "type": "image/webp"
+        },
+        {
+            "src": "icon16.png",
+            "sizes": "16x16",
+            "type": "image/webp"
+          },
+          {
+            "src": "icon48.png",
+            "sizes": "48x48",
+            "type": "image/webp"
+          }
+    ],
     "url": "https://bublinec.github.io/Sigma16-corona/"
 }
