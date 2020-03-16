@@ -75,6 +75,8 @@ function displayContents(contents) {
 
 document.getElementById('file_input').addEventListener('change', readSingleFile, false);
 
+// Fix install button color
+document.querySelector("pwa-install").setAttribute("style", "--install-button-color: black;")
 
 //-------------------------------------------------------------------------------
 // KEYBOARD SHORTCUTS - using shortcut library (mostly):
