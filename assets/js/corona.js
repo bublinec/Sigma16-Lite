@@ -51,6 +51,8 @@ function changeColor () {
 
 // Load local file
 function readSingleFile(e) {
+  console.log("neemssssssssssssssssss");
+  
   var file = e.target.files[0];
   if (!file) {
     return;

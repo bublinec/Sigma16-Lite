@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------------------
 
 function editorDownload () {
-    console.log ("editorPrepareDownload");
+    console.log ("editorPreparjureDownload");
     let downloadElt = document.getElementById("editorDownloadAnchor");
     let edText = editorBufferTextArea.textContent;
     downloadElt.href = makeTextFile(edText);  // provide text to download
