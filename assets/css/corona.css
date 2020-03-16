@@ -14,15 +14,8 @@
     --paneSecPadding: 0;
 }
 
-pwa-install{
-    width: 20px;
-    height: 20px;
-}
-
-#install_button::after{
-    content: "Install";
-    border: 2px solid var(--background);
-    border-radius: 4px;
+#install_button{
+    padding-bottom: 5px;
 }
 
 /**********/
