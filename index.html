@@ -55,14 +55,11 @@
 					</button>
 					<button title="Clear" onclick="editorClear()"><i class="fas fa-trash"></i></button>
 					<button title="Hello World!" onclick="insert_example(example_hello_world);"><i class="far fa-file-code"></i></button>
+					<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"> </script>
+					<button>
+						<pwa-install style="--install-button-color:var(--main);">Install</pwa-install>
+					</button>
 				</div>
-
-				<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
-></script>
-<pwa-install style="background-color: black;"></pwa-install>
-
 
 				<!-- EDITOR BODY -->
 				<div class="PaneBody" id="EditorBody">
