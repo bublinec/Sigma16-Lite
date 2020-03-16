@@ -716,5 +716,11 @@ window.onload = function () {
     `;
 
     insert_example(initial_message);
+
+    // Fix install button color
+    document.querySelector("pwa-install").setAttribute("style", "--install-button-color: black;");
+    console.log(document.querySelector("pwa-install").getAttribute("style"));
+    console.log("been Here");
+    
     console.log("Initialization complete");
 }

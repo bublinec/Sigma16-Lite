@@ -73,8 +73,6 @@ function displayContents(contents) {
   document.querySelector("#file_name").value = filename;
 }
 
-document.getElementById('file_input').addEventListener('change', readSingleFile, false);
-
 
 //-------------------------------------------------------------------------------
 // KEYBOARD SHORTCUTS - using shortcut library (mostly):
