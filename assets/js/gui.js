@@ -704,7 +704,10 @@ window.onload = function () {
     `; Hello Everyone,
     ; My name is Juraj Bublinec and this is Sigma16-corona!
     
-    ; This new version brings you:
+    THIS IS A PROGRESSIVE WEB APP - YOU CAN INSTALL IT AND RUN OFFLINE!!
+
+    ; This new version also brings you:
+    ;  
     ;  - this fancy GUI
     ;  - keyboard shortcuts
     ;  - file loading, saving
