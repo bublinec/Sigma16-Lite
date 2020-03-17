@@ -379,6 +379,27 @@ function procStep(es) {
 function procRun(es) {
     console.log ("procRun");
     if (es.procStatus==="Stopped") { setProcStatus (es,"Ready"); }
+
+
+    // Breakpoints
+    var break_input_value = document.querySelector("#breakpoint").value.trim();
+    console.log("========================================")
+    console.log(break_input_value);
+    breakpoint = hex4ToWord(break_input_value) - 1;
+    if(breakpoint === 0 || isNaN(breakpoint)){
+        es.breakEnabled = false;
+        console.log("disabled");
+        
+    }
+    else{
+        es.breakEnabled = true;
+        es.breakPCvalue = breakpoint;
+    }
+
+    console.log(es.breakPCvalue);
+    
+    
+
     execRunPrepare (es);
     instructionLooper (es);
     runInstrPostDisplay (es);
@@ -441,14 +462,19 @@ function instructionLooper (es) {
     if (es.procStatus==="Ready") {
 	console.log ('instructionLooper');
         execInstrPrepareFast (es);
-	executeInstruction (es);
+    executeInstruction (es);
+    console.log("********************************");
+    console.log(es.breakPCvalue);
+    console.log(es.breakEnabled);
+    
 // Check for halt or breakpoint
 	if (es.procStatus=="Halted") {
 	    console.log ("looper: halted");
             displayFullState();
         } else if (es.breakEnabled && pc.get() === es.breakPCvalue) {
-	    console.log ("looper: breakpoint");
-	    setProcStatus (es,"Break");
+	    console.log ("looper: breakpointbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+        setProcStatus (es,"Stopped");
+        procStep(es);
             displayFullState();
 	} else {
 	    setTimeout (function () {instructionLooper(es)});
