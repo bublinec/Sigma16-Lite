@@ -383,21 +383,15 @@ function procRun(es) {
 
     // Breakpoints
     var break_input_value = document.querySelector("#breakpoint").value.trim();
-    console.log("========================================")
-    console.log(break_input_value);
     breakpoint = hex4ToWord(break_input_value) - 1;
     if(breakpoint === 0 || isNaN(breakpoint)){
         es.breakEnabled = false;
-        console.log("disabled");
-        
+        console.log("disabled"); 
     }
     else{
         es.breakEnabled = true;
         es.breakPCvalue = breakpoint;
-    }
-
-    console.log(es.breakPCvalue);
-    
+    }    
     
 
     execRunPrepare (es);
@@ -463,7 +457,6 @@ function instructionLooper (es) {
 	console.log ('instructionLooper');
         execInstrPrepareFast (es);
     executeInstruction (es);
-    console.log("********************************");
     console.log(es.breakPCvalue);
     console.log(es.breakEnabled);
     
@@ -471,8 +464,8 @@ function instructionLooper (es) {
 	if (es.procStatus=="Halted") {
 	    console.log ("looper: halted");
             displayFullState();
-        } else if (es.breakEnabled && pc.get() === es.breakPCvalue) {
-	    console.log ("looper: breakpointbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+        } else if (es.breakEnabled && ((pc.get() === es.breakPCvalue) || (pc.get() === es.breakPCvalue-1)) {
+
         setProcStatus (es,"Stopped");
         procStep(es);
             displayFullState();
