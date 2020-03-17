@@ -464,7 +464,7 @@ function instructionLooper (es) {
 	if (es.procStatus=="Halted") {
 	    console.log ("looper: halted");
             displayFullState();
-        } else if (es.breakEnabled && ((pc.get() === es.breakPCvalue) || (pc.get() === es.breakPCvalue-1)) {
+        } else if (es.breakEnabled && ((pc.get() === es.breakPCvalue) || (pc.get() === es.breakPCvalue-1))){
 
         setProcStatus (es,"Stopped");
         procStep(es);
