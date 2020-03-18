@@ -39,7 +39,7 @@ function validateChars (xs) {
     let badlocs = [];
     for (i = 0; i < xs.length; i++) {
         c = xs.charAt(i);
-        if (!CharSet.includes(c)) {
+        if (!CharSet.includes(c)) {    
             console.log (`validateChars: bad char at ${i} in ${xs}`);
             badlocs.push(i);
         }
@@ -846,7 +846,7 @@ function asmPass1 (m) {
     for (let i = 0; i < asmSrcLines.length; i++) {
 	m.asmStmt[i] = mkAsmStmt (i, m.locationCounter, asmSrcLines[i]);
 	let s = m.asmStmt[i];
-        let badCharLocs = validateChars (asmSrcLines[i]);
+        let badCharLocs = validateChars (asmSrcLines[i].replace(/\t/g,''));
         if (badCharLocs.length > 0) {
             mkErrMsg (m,s,`Invalid character at position ${badCharLocs}`);
             mkErrMsg (m,s, "See User Guide for list of valid characters");
