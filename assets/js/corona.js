@@ -50,6 +50,14 @@ function changeColor () {
 
 
 // Load local file
+function displayContents(contents) {
+  document.querySelector(".highLite_colors").textContent = contents;
+  document.querySelector(".highLite_editable").textContent = contents;
+  highLite(editor);
+  var filename = document.querySelector("#file_input").value.split(/(\\|\/)/g).pop().split('.')[0];
+  document.querySelector("#file_name").value = filename;
+}
+
 function readSingleFile(e) {
   
   var file = e.target.files[0];
@@ -64,13 +72,7 @@ function readSingleFile(e) {
   reader.readAsText(file);
 }
 
-function displayContents(contents) {
-  document.querySelector(".highLite_colors").textContent = contents;
-  document.querySelector(".highLite_editable").textContent = contents;
-  highLite(editor);
-  var filename = document.querySelector("#file_input").value.split(/(\\|\/)/g).pop().split('.')[0];
-  document.querySelector("#file_name").value = filename;
-}
+document.getElementById('file_input').addEventListener('change', readSingleFile, false);
 
 
 //-------------------------------------------------------------------------------
